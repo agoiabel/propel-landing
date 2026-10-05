@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="_ds/nexura-design-system-19251d3b-6029-4068-a5c5-a67a7d870366/styles.css">
+  <script src="_ds/nexura-design-system-19251d3b-6029-4068-a5c5-a67a7d870366/_ds_bundle.js"></script>
+  <script src="site-motion.js"></script>
+  <style>body{margin:0;background:#fff;color:#000;font-family:var(--font-sans);font-feature-settings:var(--font-features);-webkit-font-smoothing:antialiased}a{color:inherit}a:hover{color:var(--blue-ink)}:focus-visible{outline:2px solid #517ffc;outline-offset:3px}@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}</style>
+</helmet>
+<dc-import name="site-header" current="results" hint-size="100%,73px"></dc-import>
+<main id="main" style="max-width:1290px;margin:0 auto;border-left:1px dashed var(--grey-300);border-right:1px dashed var(--grey-300);box-sizing:border-box;min-height:60vh">
+  <sc-if value="{{ missing }}" hint-placeholder-val="{{ false }}">
+    <section aria-labelledby="h1" style="background-color:#fff;background-image:radial-gradient(ellipse 50% 50% at 50% 50%,#fff 18%,rgba(255,255,255,0) 100%),radial-gradient(rgba(0,0,0,.08) 1px,transparent 1.3px);background-size:100% 100%,24px 24px;padding:clamp(64px,9vw,112px) clamp(20px,5vw,64px);display:flex;flex-direction:column;align-items:flex-start;gap:20px">
+      <h1 id="h1" style="margin:0;font:500 clamp(36px,5vw,54px)/1.1 var(--font-sans);letter-spacing:-0.045em">We couldn't find that story.</h1>
+      <p style="margin:0;font:400 17px/1.5 var(--font-sans);color:var(--grey-700)">It may have moved. All our published work is in one library.</p>
+      <x-import component-from-global-scope="NexuraDesignSystem_19251d.Button" href="/case-studies" hint-size="160px,44px">See our work</x-import>
+    </section>
+  </sc-if>
+  <sc-if value="{{ ready }}" hint-placeholder-val="{{ false }}">
+    <section aria-labelledby="h1" style="background-color:#fff;background-image:radial-gradient(ellipse 50% 50% at 50% 50%,#fff 18%,rgba(255,255,255,0) 100%),radial-gradient(rgba(0,0,0,.08) 1px,transparent 1.3px);background-size:100% 100%,24px 24px;display:flex;flex-wrap:wrap;align-items:stretch;overflow:hidden">
+      <div style="padding:clamp(64px,9vw,112px) clamp(20px,5vw,64px) clamp(48px,6vw,72px);display:flex;flex-direction:column;align-items:flex-start;gap:24px;flex:1 1 420px;min-width:0;box-sizing:border-box;justify-content:center">
+      <a href="/case-studies" style="font:500 14px/1.4 var(--font-sans);color:var(--grey-700);text-decoration:none;min-height:32px;display:inline-flex;align-items:center">← Case Studies</a>
+      <x-import component-from-global-scope="NexuraDesignSystem_19251d.Tag" hint-size="160px,26px">{{ s.eyebrow }}</x-import>
+      <h1 id="h1" style="margin:0;max-width:900px;font:500 clamp(40px,6vw,64px)/1.08 var(--font-sans);letter-spacing:-0.045em;text-wrap:balance">{{ s.h1 }}</h1>
+      <p style="margin:0;max-width:720px;font:400 clamp(17px,1.6vw,19px)/1.5 var(--font-sans);letter-spacing:-0.02em;color:var(--grey-700);text-wrap:pretty">{{ s.intro }}</p>
+    </div>
+      <div aria-hidden="true" style="flex:1.25 1 440px;position:relative;min-height:clamp(220px,34vw,480px)"><sc-if value="{{ heroSrc }}" hint-placeholder-val="{{ false }}"><img data-src="{{ heroSrc }}" alt="" width="1672" height="941" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;user-select:none;object-position:82% 70%"></sc-if></div>
+    </section>
+
+    <sc-if value="{{ hasFacts }}">
+      <section aria-labelledby="h-facts" style="border-top:1px dashed var(--grey-300);padding:clamp(56px,7vw,88px) clamp(20px,5vw,64px);background:var(--grey-100);display:flex;flex-direction:column;gap:32px">
+        <h2 id="h-facts" style="margin:0;font:500 clamp(28px,3.6vw,36px)/1.2 var(--font-sans);letter-spacing:-0.04em">{{ s.factsTitle }}</h2>
+        <sc-if value="{{ hasBars }}">
+          <figure style="margin:0;background:#fff;padding:clamp(20px,3vw,32px);display:flex;flex-direction:column;gap:22px">
+            <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:20px">
+              <sc-for list="{{ bars }}" as="b">
+                <li style="display:flex;flex-direction:column;gap:8px">
+                  <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap">
+                    <span style="font:400 15px/1.4 var(--font-sans);max-width:560px">{{ b.label }}</span>
+                    <span style="font:500 24px/1 var(--font-numeric);letter-spacing:-0.03em">{{ b.value }}</span>
+                  </div>
+                  <div aria-hidden="true" style="height:14px;background:var(--grey-100)"><div style="height:100%;width:{{ b.width }};background:#000"></div></div>
+                </li>
+              </sc-for>
+            </ul>
+            <figcaption style="font:400 14px/1.5 var(--font-sans);color:var(--grey-700);padding-top:14px;border-top:1px dashed var(--grey-200)">{{ s.bars.caption }}</figcaption>
+          </figure>
+        </sc-if>
+        <sc-if value="{{ hasPct }}">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:2px">
+            <sc-for list="{{ pct }}" as="p">
+              <div style="background:#fff;padding:24px;display:flex;flex-direction:column;gap:12px">
+                <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px">
+                  <span id="{{ p.id }}" style="font:400 15px/1.4 var(--font-sans)">{{ p.label }}</span>
+                  <span style="font:500 32px/1 var(--font-numeric);letter-spacing:-0.03em">{{ p.text }}</span>
+                </div>
+                <div role="meter" aria-labelledby="{{ p.id }}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ p.p }}" aria-valuetext="{{ p.text }}" style="height:14px;background:var(--grey-100)"><div style="height:100%;width:{{ p.text }};background:var(--blue-500)"></div></div>
+                <div aria-hidden="true" style="display:flex;justify-content:space-between;font:400 12px/1 var(--font-numeric);color:var(--grey-700)"><span>0%</span><span>100%</span></div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ hasTiles }}">
+          <dl style="margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:2px">
+            <sc-for list="{{ tiles }}" as="t">
+              <div style="background:#fff;padding:24px;display:flex;flex-direction:column-reverse;justify-content:flex-end;gap:8px">
+                <dt style="font:400 15px/1.45 var(--font-sans);color:var(--grey-700)">{{ t.l }}</dt>
+                <dd style="margin:0;font:500 40px/1.05 var(--font-numeric);letter-spacing:-0.04em;color:#1b4fd8">{{ t.v }}</dd>
+              </div>
+            </sc-for>
+          </dl>
+        </sc-if>
+        <sc-if value="{{ hasAreas }}">
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <h3 style="margin:0;font:500 16px/1.4 var(--font-sans)">{{ s.areas.title }}</h3>
+            <ul style="list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px">
+              <sc-for list="{{ s.areas.items }}" as="a"><li style="padding:8px 16px;border-radius:100px;background:#fff;border:1px solid var(--grey-200);font:500 14px/1.3 var(--font-sans)">{{ a }}</li></sc-for>
+            </ul>
+          </div>
+        </sc-if>
+        <sc-if value="{{ hasContext }}">
+          <dl style="margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:0 32px">
+            <sc-for list="{{ s.context }}" as="c">
+              <div style="padding:14px 0;border-top:1px dashed var(--grey-300);display:flex;flex-direction:column;gap:4px"><dt style="font:500 13px/1.4 var(--font-sans);color:var(--grey-700)">{{ c.k }}</dt><dd style="margin:0;font:500 16px/1.45 var(--font-sans)">{{ c.v }}</dd></div>
+            </sc-for>
+          </dl>
+        </sc-if>
+      </section>
+    </sc-if>
+
+    <section aria-labelledby="h-visual" style="border-top:1px dashed var(--grey-300);padding:clamp(56px,7vw,88px) clamp(20px,5vw,64px);display:flex;flex-direction:column;gap:28px">
+      <h2 id="h-visual" style="margin:0;font:500 clamp(28px,3.6vw,36px)/1.2 var(--font-sans);letter-spacing:-0.04em">{{ s.visual.title }}</h2>
+      <sc-if value="{{ isSteps }}">
+        <figure style="margin:0;background:#fff;padding:clamp(24px,4vw,40px);display:flex;flex-direction:column;gap:24px;border:1px solid var(--grey-200)">
+          <sc-if value="{{ hasDuration }}">
+            <figcaption style="display:flex;flex-wrap:wrap;gap:10px;align-items:center"><span style="padding:6px 14px;border-radius:100px;background:#000;color:#fff;font:500 14px/1.4 var(--font-sans)">{{ s.visual.duration }}</span></figcaption>
+          </sc-if>
+          <ol style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:24px 0">
+            <sc-for list="{{ steps }}" as="st">
+              <li style="display:flex;flex-direction:column;gap:12px;padding-right:20px">
+                <div aria-hidden="true" style="display:flex;align-items:center"><span style="width:36px;height:36px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font:500 14px/1 var(--font-numeric);background:{{ st.bg }};color:{{ st.fg }};border:1.5px solid {{ st.border }};box-sizing:border-box">{{ st.n }}</span><span style="flex:1;height:1.5px;background:{{ st.line }};margin-right:-20px"></span></div>
+                <h3 style="margin:0;font:500 18px/1.3 var(--font-sans);letter-spacing:-0.04em">{{ st.t }}</h3>
+                <p style="margin:0;font:400 14px/1.5 var(--font-sans);color:var(--grey-700)">{{ st.d }}</p>
+              </li>
+            </sc-for>
+          </ol>
+        </figure>
+      </sc-if>
+      <sc-if value="{{ isHandoff }}">
+        <ol style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:2px">
+          <sc-for list="{{ handoff }}" as="h">
+            <li style="background:{{ h.bg }};color:{{ h.fg }};padding:28px;display:flex;flex-direction:column;gap:12px">
+              <span style="align-self:flex-start;padding:4px 12px;border-radius:100px;background:{{ h.chip }};font:500 13px/1.4 var(--font-sans)">{{ h.o }}</span>
+              <h3 style="margin:0;font:500 20px/1.3 var(--font-sans);letter-spacing:-0.04em">{{ h.t }}</h3>
+              <p style="margin:0;font:400 15px/1.5 var(--font-sans);opacity:.85">{{ h.d }}</p>
+              <span aria-hidden="true" style="margin-top:auto;font:400 20px/1 var(--font-sans);opacity:.7">{{ h.arrow }}</span>
+            </li>
+          </sc-for>
+        </ol>
+      </sc-if>
+      <sc-if value="{{ isDoc }}">
+        <div style="background:var(--grey-100);padding:clamp(20px,4vw,48px);display:flex;justify-content:center">
+          <article aria-label="{{ docAria }}" style="width:100%;max-width:620px;background:#fff;border:1px solid var(--grey-200);border-radius:12px;box-shadow:0 5px 20px rgba(0,0,0,.08);padding:28px;display:flex;flex-direction:column;gap:14px;box-sizing:border-box">
+            <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;align-items:center">
+              <h3 style="margin:0;font:500 18px/1.3 var(--font-sans);letter-spacing:-0.03em">{{ s.visual.doc.name }}</h3>
+              
+            </div>
+            <dl style="margin:0;display:flex;flex-direction:column">
+              <sc-for list="{{ docFields }}" as="f">
+                <div style="display:flex;flex-wrap:wrap;gap:4px 16px;padding:14px 0;border-top:1px dashed var(--grey-200)">
+                  <dt style="flex:0 0 140px;font:500 13px/1.4 var(--font-sans);color:var(--grey-700)">{{ f.k }}</dt>
+                  <dd style="margin:0;flex:1 1 200px;display:flex;flex-wrap:wrap;gap:6px;font:400 15px/1.45 var(--font-sans)">
+                    <sc-for list="{{ f.parts }}" as="pt"><span style="padding:{{ f.pad }};border:{{ f.border }};border-radius:6px">{{ pt }}</span></sc-for>
+                  </dd>
+                </div>
+              </sc-for>
+            </dl>
+            
+          </article>
+        </div>
+      </sc-if>
+    </section>
+
+    <sc-for list="{{ s.sections }}" as="sec">
+      <section style="border-top:1px dashed var(--grey-300);padding:clamp(48px,6vw,72px) clamp(20px,5vw,64px);display:flex;flex-wrap:wrap;gap:16px 64px">
+        <h2 style="flex:1 1 260px;margin:0;font:500 clamp(24px,3vw,30px)/1.25 var(--font-sans);letter-spacing:-0.04em">{{ sec.h }}</h2>
+        <div style="flex:2 1 440px;min-width:0;display:flex;flex-direction:column;gap:14px">
+          <sc-for list="{{ sec.ps }}" as="p"><p style="margin:0;font:400 17px/1.6 var(--font-sans);color:var(--grey-700)">{{ p }}</p></sc-for>
+        </div>
+      </section>
+    </sc-for>
+
+    <sc-if value="{{ hasQuote }}">
+      <section aria-labelledby="h-quote" style="border-top:1px dashed var(--grey-300);padding:clamp(56px,7vw,88px) clamp(20px,5vw,64px);background:var(--grey-100)">
+        <h2 id="h-quote" style="margin:0 0 24px;font:500 13px/1.4 var(--font-sans);letter-spacing:0.02em;text-transform:uppercase;color:var(--grey-700)">{{ s.quoteTitle }}</h2>
+        <figure style="margin:0;max-width:880px;display:flex;flex-direction:column;gap:20px">
+          <blockquote style="margin:0;font:500 clamp(22px,2.8vw,30px)/1.35 var(--font-sans);letter-spacing:-0.035em;text-wrap:pretty">{{ s.quote.text }}</blockquote>
+          <figcaption style="font:400 15px/1.4 var(--font-sans);color:var(--grey-700)">{{ s.quote.by }}</figcaption>
+        </figure>
+      </section>
+    </sc-if>
+
+    <div style="background:#fff;overflow:hidden">
+    <section aria-labelledby="h-cta" style="position:relative;z-index:1;border-top:1px dashed var(--grey-300);padding:clamp(64px,8vw,104px) clamp(20px,5vw,64px);display:flex;flex-wrap:wrap;gap:32px 64px;align-items:flex-end;justify-content:space-between">
+    <div aria-hidden="true" style="position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(0,0,0,.018) 2px,transparent 2px),linear-gradient(90deg,rgba(0,0,0,.018) 2px,transparent 2px);background-size:48px 48px;background-position:center top;-webkit-mask-image:radial-gradient(ellipse 75% 90% at 50% 40%,#000 10%,transparent 80%);mask-image:radial-gradient(ellipse 75% 90% at 50% 40%,#000 10%,transparent 80%)"></div>
+      <div style="flex:2 1 420px;display:flex;flex-direction:column;gap:14px;align-items:flex-start">
+        <h2 id="h-cta" style="margin:0;font:500 clamp(28px,3.6vw,40px)/1.15 var(--font-sans);letter-spacing:-0.04em">{{ s.cta.h }}</h2>
+        <p style="margin:0;max-width:520px;font:400 17px/1.5 var(--font-sans);color:var(--grey-700)">{{ s.cta.p }}</p>
+        <x-import component-from-global-scope="NexuraDesignSystem_19251d.Button" href="{{ ctaHref }}" hint-size="200px,44px">{{ s.cta.label }}</x-import>
+      </div>
+      <nav aria-label="Related" style="flex:1 1 260px;display:flex;flex-direction:column;gap:4px">
+        <p style="margin:0 0 4px;font:500 13px/1.4 var(--font-sans);color:var(--grey-700)">{{ relatedLabel }}</p>
+        <sc-for list="{{ related }}" as="r">
+          <a href="{{ r.href }}" style="display:flex;justify-content:space-between;align-items:center;min-height:52px;border-top:1px solid var(--grey-200);font:500 17px/1.3 var(--font-sans);letter-spacing:-0.03em;text-decoration:none">{{ r.name }}<span aria-hidden="true">→</span></a>
+        </sc-for>
+      </nav>
+    </section>
+    <sc-if value="{{ closeSrc }}" hint-placeholder-val="{{ false }}"><img aria-hidden="true" data-src="{{ closeSrc }}" alt="" width="1916" height="821" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;margin-top:calc(-1 * clamp(40px,11vw,150px));pointer-events:none;user-select:none;position:relative"></sc-if>
+    </div>
+  </sc-if>
+</main>
+<dc-import name="site-footer" hint-size="100%,420px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const V2 = ['mastercard-foundation', 'fertitude', 'tweakcentric'];
+class Component extends DCLogic {
+  state = { s: null, missing: false };
+  componentDidMount() {
+    document.title = 'Case Studies | Propel';
+    const id = new URLSearchParams(location.search).get('id');
+    import(new URL('site-data.js', location.href).href).then(m => {
+      const s = m.STORIES.find(x => x.id === id);
+      if (!s) { this.setState({ missing: true }); document.title = 'Story not found | Propel'; return; }
+      document.title = s.title;
+      let md = document.querySelector('meta[name="description"]');
+      if (!md) { md = document.createElement('meta'); md.name = 'description'; document.head.appendChild(md); }
+      md.content = s.summary;
+      this.setState({ s });
+    }).catch(() => this.setState({ missing: true }));
+  }
+  componentDidUpdate() {
+    document.querySelectorAll('img[data-src]').forEach(i => { const s = i.getAttribute('data-src'); if (s && s.indexOf('{') < 0 && i.getAttribute('src') !== s) i.setAttribute('src', s); });
+    const x = this.state.s;
+    if (x && document.title !== x.title) document.title = x.title;
+  }
+  renderVals() {
+    const s = this.state.s;
+    if (!s) return { heroSrc: '', closeSrc: '', ready: false, missing: this.state.missing, s: { visual: { doc: {} }, cta: {}, quote: {}, bars: {}, areas: {} } };
+    const v = s.visual;
+    const isSteps = v.type === 'timeline' || v.type === 'pathway';
+    const steps = isSteps ? v.steps.map((st, i) => { const last = i === v.steps.length - 1; return { n: i + 1, t: st.t, d: st.d, bg: last ? 'var(--blue-500)' : '#fff', fg: last ? '#fff' : '#000', border: last ? 'var(--blue-500)' : '#000', line: last ? 'transparent' : '#000' }; }) : [];
+    const handoff = v.type === 'handoff' ? v.steps.map((h, i) => ({ o: h.o, t: h.t, d: h.d, bg: i === 1 ? '#000' : 'var(--grey-50)', fg: i === 1 ? '#fff' : '#000', chip: i === 1 ? 'rgba(255,255,255,.14)' : '#fff', arrow: i < v.steps.length - 1 ? '→' : '' })) : [];
+    const docFields = v.type === 'doc' ? v.doc.fields.map(f => ({ k: f.k, parts: f.chips ? f.v.split(' · ') : [f.v], pad: f.chips ? '4px 10px' : '0', border: f.chips ? '1px solid var(--grey-200)' : '0' })) : [];
+    const topic = s.cta.topic;
+    return {
+      ready: true, missing: false, s, heroSrc: 'assets/propel-results-' + (s.art || s.id) + '-header' + (V2.indexOf(s.id) >= 0 ? '-v2' : '') + '.webp', closeSrc: 'assets/propel-results-' + (s.art || s.id) + '-closing' + (V2.indexOf(s.id) >= 0 ? '-v2' : '') + '.webp',
+      hasFacts: !!(s.bars || s.pct || s.tiles || s.areas || s.context),
+      hasBars: !!s.bars, bars: s.bars ? s.bars.items.map(b => Object.assign({}, b, { width: b.w + '%' })) : [],
+      hasPct: !!s.pct, pct: (s.pct || []).map((p, i) => ({ label: p.label, p: p.p, text: p.p + '%', id: 'pct-' + i })),
+      hasTiles: !!s.tiles, tiles: s.tiles || [],
+      hasAreas: !!s.areas, hasContext: !!s.context,
+      isSteps, steps, hasDuration: !!v.duration,
+      isHandoff: v.type === 'handoff', handoff,
+      isDoc: v.type === 'doc', docFields, docAria: v.type === 'doc' ? v.doc.name + ', illustrative format' : '',
+      hasQuote: !!s.quote,
+      ctaHref: '/contact' + (topic ? '?topic=' + encodeURIComponent(topic) : ''),
+      relatedLabel: s.related.length > 1 ? 'Related stories' : 'Related story',
+      related: s.related.map(r => ({ name: r.name, href: '/story?id=' + r.id }))
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+/* Minimal element defaults so cards and kits pick up the brand. */
+html,body{margin:0;padding:0;background:var(--bg-page);color:var(--text-primary);font-family:var(--font-sans);font-feature-settings:var(--font-features);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+*{box-sizing:border-box}
+h1,h2,h3,h4,h5,h6,p,figure{margin:0}
+a{color:var(--text-primary);text-decoration:none}
+a:hover{color:var(--text-secondary)}
+.nx-h1{font:var(--weight-medium) var(--text-h1-size)/var(--text-h1-lh) var(--font-sans);letter-spacing:var(--tracking-heading)}
+.nx-h2{font:var(--weight-medium) var(--text-h2-size)/var(--text-h2-lh) var(--font-sans);letter-spacing:var(--tracking-heading)}
+.nx-h3{font:var(--weight-medium) var(--text-h3-size)/var(--text-h3-lh) var(--font-sans);letter-spacing:var(--tracking-heading)}
+.nx-h4{font:var(--weight-medium) var(--text-h4-size)/var(--text-h4-lh) var(--font-sans);letter-spacing:var(--tracking-heading)}
+.nx-h5{font:var(--weight-medium) var(--text-h5-size)/var(--text-h5-lh) var(--font-sans);letter-spacing:var(--tracking-heading)}
+.nx-h6{font:var(--weight-medium) var(--text-h6-size)/var(--text-h6-lh) var(--font-sans);letter-spacing:var(--tracking-heading)}
+.nx-body-lg{font:var(--weight-regular) var(--text-body-lg-size)/var(--text-body-lg-lh) var(--font-sans);letter-spacing:var(--tracking-body)}
+.nx-body{font:var(--weight-regular) var(--text-body-size)/var(--text-body-lh) var(--font-sans);letter-spacing:var(--tracking-body)}
+.nx-body-strong{font:var(--weight-medium) var(--text-body-size)/var(--text-body-lh) var(--font-sans);letter-spacing:var(--tracking-body)}
+.nx-small{font:var(--weight-regular) var(--text-small-size)/var(--text-small-lh) var(--font-sans);letter-spacing:var(--tracking-body)}
+.nx-caption{font:var(--weight-regular) var(--text-caption-size)/var(--text-caption-lh) var(--font-sans);letter-spacing:var(--tracking-body)}
+.nx-price{font:var(--weight-medium) var(--text-price-size)/var(--text-price-lh) var(--font-numeric);letter-spacing:var(--tracking-body)}

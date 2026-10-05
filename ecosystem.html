@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>Our ecosystem | Propel</title>
+  <meta name="description" content="Explore specialised communities across engineering, data, design, product, security and Web3. Meet the network behind Propel's enterprise programmes.">
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="_ds/nexura-design-system-19251d3b-6029-4068-a5c5-a67a7d870366/styles.css">
+  <script src="_ds/nexura-design-system-19251d3b-6029-4068-a5c5-a67a7d870366/_ds_bundle.js"></script>
+  <script src="site-motion.js"></script>
+  <style>body{margin:0;background:#fff;color:#000;font-family:var(--font-sans);font-feature-settings:var(--font-features);-webkit-font-smoothing:antialiased}a{color:inherit}a:hover{color:var(--blue-ink)}:focus-visible{outline:2px solid #517ffc;outline-offset:3px}@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}html{scroll-behavior:smooth}</style>
+</helmet>
+<dc-import name="site-header" current="ecosystem" hint-size="100%,73px"></dc-import>
+<main id="main" style="max-width:1290px;margin:0 auto;border-left:1px dashed var(--grey-300);border-right:1px dashed var(--grey-300);box-sizing:border-box">
+  <section aria-labelledby="h1" style="padding:clamp(64px,9vw,112px) clamp(20px,5vw,64px) 16px;display:flex;flex-direction:column;align-items:flex-start;gap:24px;background-color:#fff;background-image:radial-gradient(ellipse 50% 50% at 50% 50%,#fff 18%,rgba(255,255,255,0) 100%),radial-gradient(rgba(0,0,0,.08) 1px,transparent 1.3px);background-size:100% 100%,24px 24px">
+    <x-import component-from-global-scope="NexuraDesignSystem_19251d.Tag" hint-size="110px,26px">The network</x-import>
+    <h1 id="h1" style="margin:0;font:500 clamp(40px,6vw,64px)/1.08 var(--font-sans);letter-spacing:-0.045em">Our <span style="color:#1b4fd8">ecosystem</span></h1>
+    <p style="margin:0;max-width:720px;font:400 clamp(17px,1.6vw,19px)/1.5 var(--font-sans);letter-spacing:-0.02em;color:var(--grey-700);text-wrap:pretty">Propel's ecosystem includes 1M+ professionals across 400+ specialised communities in 27 countries. Explore the disciplines, interests and locations behind the network.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px">
+      <x-import component-from-global-scope="NexuraDesignSystem_19251d.Button" href="#community-directory" hint-size="200px,44px">Explore the communities</x-import>
+      <x-import component-from-global-scope="NexuraDesignSystem_19251d.Button" variant="outline" href="/for-communities" hint-size="170px,44px">Join the ecosystem</x-import>
+    </div>
+  </section>
+  <div aria-hidden="true" style="background:#fff;overflow:hidden"><img src="assets/propel-ecosystem-header.webp" alt="" width="1916" height="821" style="display:block;width:100%;height:auto;max-height:440px;aspect-ratio:1916/560;object-fit:cover;object-position:50% 100%;pointer-events:none;user-select:none"></div>
+
+  <section aria-labelledby="h-net" style="border-top:1px dashed var(--grey-300);padding:clamp(56px,7vw,88px) clamp(20px,5vw,64px);display:flex;flex-wrap:wrap;gap:24px 64px">
+    <h2 id="h-net" style="flex:1 1 280px;margin:0;font:500 clamp(30px,4vw,40px)/1.2 var(--font-sans);letter-spacing:-0.04em">Our network</h2>
+    <div style="flex:2 1 440px;display:flex;flex-direction:column;gap:14px">
+      <p style="margin:0;font:400 17px/1.55 var(--font-sans);color:var(--grey-700)">The right audience can be a developer group, a design community, a language-specific contributor network or professionals at a particular stage in their careers.</p>
+      <p style="margin:0;font:400 17px/1.55 var(--font-sans);color:var(--grey-700)">We work through those relationships, then select participants against each programme's requirements. Skills, experience and identity checks are applied where the assignment calls for them.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-skills" style="border-top:1px dashed var(--grey-300);padding:clamp(64px,8vw,100px) clamp(20px,5vw,64px);background:var(--grey-100);display:flex;flex-direction:column;gap:32px">
+    <h2 id="h-skills" style="margin:0;font:500 clamp(30px,4vw,40px)/1.2 var(--font-sans);letter-spacing:-0.04em">Skills and experience</h2>
+    <dl style="margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:2px">
+      <dc-import name="stat-tile" label="women and non-binary members" value="38%" size="56" hint-size="100%,140px"></dc-import>
+      <dc-import name="stat-tile" label="community archetypes" value="14" size="56" hint-size="100%,140px"></dc-import>
+    </dl>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:2px">
+      <figure style="margin:0;background:#fff;padding:28px;display:flex;flex-direction:column;gap:20px">
+        <h3 style="margin:0;font:500 20px/1.3 var(--font-sans);letter-spacing:-0.04em">Top skills in the ecosystem</h3>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px">
+          <sc-for list="{{ skills }}" as="k" hint-placeholder-count="5">
+            <li style="display:flex;flex-direction:column;gap:6px">
+              <div style="display:flex;justify-content:space-between;gap:12px"><span id="{{ k.id }}" style="font:400 15px/1.4 var(--font-sans)">{{ k.label }}</span><span style="font:500 17px/1.2 var(--font-numeric)">{{ k.text }}</span></div>
+              <div role="meter" aria-labelledby="{{ k.id }}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ k.v }}" aria-valuetext="{{ k.text }}" style="height:12px;background:var(--grey-100)"><div style="height:100%;width:{{ k.text }};background:#000"></div></div>
+            </li>
+          </sc-for>
+        </ul>
+        <figcaption style="padding-top:14px;border-top:1px dashed var(--grey-200);font:400 14px/1.5 var(--font-sans);color:var(--grey-700)">Share of members on a 0–100% scale.</figcaption>
+      </figure>
+      <figure style="margin:0;background:#fff;padding:28px;display:flex;flex-direction:column;gap:20px">
+        <h3 style="margin:0;font:500 20px/1.3 var(--font-sans);letter-spacing:-0.04em">Experience levels</h3>
+        <div role="img" aria-label="Experience levels: junior 28%, mid-level 44%, senior 28%" style="display:flex;height:56px;gap:2px">
+          <div style="width:28%;background:var(--grey-300);display:flex;align-items:center;padding-left:12px;font:500 15px/1 var(--font-numeric)">28%</div>
+          <div style="width:44%;background:#000;color:#fff;display:flex;align-items:center;padding-left:12px;font:500 15px/1 var(--font-numeric)">44%</div>
+          <div style="width:28%;background:var(--blue-500);color:#fff;display:flex;align-items:center;padding-left:12px;font:500 15px/1 var(--font-numeric)">28%</div>
+        </div>
+        <dl style="margin:0;display:flex;flex-wrap:wrap;gap:12px 28px">
+          <div style="display:flex;align-items:center;gap:8px"><span aria-hidden="true" style="width:12px;height:12px;background:var(--grey-300)"></span><dt style="font:400 15px/1.4 var(--font-sans)">Junior</dt><dd style="margin:0;font:500 15px/1.4 var(--font-numeric);color:#1b4fd8">28%</dd></div>
+          <div style="display:flex;align-items:center;gap:8px"><span aria-hidden="true" style="width:12px;height:12px;background:#000"></span><dt style="font:400 15px/1.4 var(--font-sans)">Mid-level</dt><dd style="margin:0;font:500 15px/1.4 var(--font-numeric);color:#1b4fd8">44%</dd></div>
+          <div style="display:flex;align-items:center;gap:8px"><span aria-hidden="true" style="width:12px;height:12px;background:var(--blue-500)"></span><dt style="font:400 15px/1.4 var(--font-sans)">Senior</dt><dd style="margin:0;font:500 15px/1.4 var(--font-numeric);color:#1b4fd8">28%</dd></div>
+        </dl>
+        
+      </figure>
+    </div>
+  </section>
+
+  <section id="community-directory" aria-labelledby="h-find" style="border-top:1px dashed var(--grey-300);padding:clamp(64px,8vw,100px) clamp(20px,5vw,64px);display:flex;flex-direction:column;gap:28px;scroll-margin-top:80px">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <h2 id="h-find" style="margin:0;font:500 clamp(30px,4vw,40px)/1.2 var(--font-sans);letter-spacing:-0.04em">Communities</h2>
+      <p style="margin:0;font:400 16px/1.5 var(--font-sans);color:var(--grey-700)">A directory of some of our communities across {{ countryCount }} countries.</p>
+    </div>
+    <div role="search" style="display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;align-content:flex-start;padding:16px;background:var(--grey-100);box-sizing:border-box">
+      <label style="flex:2 1 260px;display:flex;flex-direction:column;gap:6px;font:500 13px/1.4 var(--font-sans);color:var(--grey-700)">Search
+        <input type="search" value="{{ q }}" onInput="{{ onQ }}" placeholder="Search communities or skills" style="min-height:48px;padding:0 16px;border:1px solid var(--grey-300);border-radius:8px;background:#fff;font:400 16px/1.3 var(--font-sans);color:#000;box-sizing:border-box">
+      </label>
+      <label style="flex:1 1 180px;display:flex;flex-direction:column;gap:6px;font:500 13px/1.4 var(--font-sans);color:var(--grey-700)">Discipline
+        <select value="{{ disc }}" onChange="{{ onDisc }}" style="min-height:48px;padding:0 12px;border:1px solid var(--grey-300);border-radius:8px;background:#fff;font:400 16px/1.3 var(--font-sans);color:#000"><sc-for list="{{ discOpts }}" as="o"><option value="{{ o.v }}">{{ o.l }}</option></sc-for></select>
+      </label>
+      <label style="flex:1 1 180px;display:flex;flex-direction:column;gap:6px;font:500 13px/1.4 var(--font-sans);color:var(--grey-700)">Country
+        <select value="{{ loc }}" onChange="{{ onLoc }}" style="min-height:48px;padding:0 12px;border:1px solid var(--grey-300);border-radius:8px;background:#fff;font:400 16px/1.3 var(--font-sans);color:#000"><sc-for list="{{ locOpts }}" as="o"><option value="{{ o.v }}">{{ o.l }}</option></sc-for></select>
+      </label>
+      <label style="flex:1 1 180px;display:flex;flex-direction:column;gap:6px;font:500 13px/1.4 var(--font-sans);color:var(--grey-700)">Community focus
+        <select value="{{ focus }}" onChange="{{ onFocus }}" style="min-height:48px;padding:0 12px;border:1px solid var(--grey-300);border-radius:8px;background:#fff;font:400 16px/1.3 var(--font-sans);color:#000"><option value="">All communities</option><option value="women">Women and gender minorities</option></select>
+      </label>
+      <button type="button" onClick="{{ clear }}" style="min-height:48px;padding:0 18px;border:1px solid var(--grey-300);border-radius:100px;background:#fff;font:500 15px/1 var(--font-sans);color:#000;cursor:pointer;flex:none;margin:0">Clear filters</button>
+    </div>
+    <p aria-live="polite" style="margin:0;font:500 14px/1.4 var(--font-sans);color:var(--grey-700)">{{ countText }}</p>
+    <sc-if value="{{ empty }}" hint-placeholder-val="{{ false }}">
+      <div style="padding:48px 24px;background:var(--grey-100);display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center">
+        <p style="margin:0;font:500 18px/1.4 var(--font-sans);letter-spacing:-0.03em">No communities match those filters. Try another skill or location.</p>
+        <button type="button" onClick="{{ clear }}" style="min-height:44px;padding:0 20px;border:0;border-radius:100px;background:#000;color:#fff;font:500 15px/1 var(--font-sans);cursor:pointer">Clear filters</button>
+      </div>
+    </sc-if>
+    <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:16px">
+      <sc-for list="{{ shown }}" as="c" hint-placeholder-count="6">
+        <li data-card="1" style="background:#fff;border:1px solid var(--grey-200);padding:22px;display:flex;flex-direction:column;gap:14px">
+          <div style="display:flex;align-items:center;gap:14px">
+            <span aria-hidden="true" style="position:relative;flex:none;width:56px;height:56px;border:1px solid var(--grey-200);background:#fff;display:flex;align-items:center;justify-content:center;font:500 16px/1 var(--font-sans);color:var(--grey-700);overflow:hidden">{{ c.initials }}<img src="{{ c.logo }}" alt="" width="56" height="56" loading="lazy" decoding="async" onError="{{ onImgErr }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;padding:4px;box-sizing:border-box"></span>
+            <div style="min-width:0;display:flex;flex-direction:column;gap:2px"><h3 style="margin:0;font:500 18px/1.25 var(--font-sans);letter-spacing:-0.04em">{{ c.name }}</h3><span style="font:400 13px/1.4 var(--font-sans);color:var(--grey-700)">{{ c.country }}</span></div>
+          </div>
+          <p style="margin:0;font:400 14px/1.5 var(--font-sans);color:var(--grey-700);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden">{{ c.desc }}</p>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:auto">
+            <sc-for list="{{ c.tags }}" as="tg"><span style="padding:4px 10px;border-radius:100px;background:var(--grey-100);font:500 12px/1.4 var(--font-sans)">{{ tg }}</span></sc-for>
+          </div>
+        </li>
+      </sc-for>
+    </ul>
+    <sc-if value="{{ more }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;justify-content:center"><button type="button" onClick="{{ showMore }}" style="min-height:48px;padding:0 24px;border:1px solid var(--grey-300);border-radius:100px;background:#fff;font:500 16px/1 var(--font-sans);color:#000;cursor:pointer">Show more communities</button></div>
+    </sc-if>
+  </section>
+
+  <section aria-labelledby="h-types" style="border-top:1px dashed var(--grey-300);padding:clamp(64px,8vw,100px) clamp(20px,5vw,64px);background:var(--grey-100);display:flex;flex-direction:column;gap:40px">
+    <h2 id="h-types" style="margin:0;font:500 clamp(30px,4vw,40px)/1.2 var(--font-sans);letter-spacing:-0.04em">Community types</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:2px">
+      <div style="display:flex;flex-direction:column;gap:14px;background:#fff;padding:24px"><span aria-hidden="true" style="width:48px;height:48px;border:1px dashed var(--grey-400);background:#fff;display:flex;align-items:center;justify-content:center;color:#000"><x-import component-from-global-scope="NexuraDesignSystem_19251d.Icon" name="plugs-connected" size="{{ 24 }}" hint-size="24px,24px"></x-import></span><h3 style="margin:0;font:500 18px/1.3 var(--font-sans);letter-spacing:-0.04em">Developer communities</h3><p style="margin:0;font:400 15px/1.5 var(--font-sans);color:var(--grey-700)">Frontend, backend, full-stack, mobile, cloud and open-source practitioners. Relevant to technical learning, hackathons, product testing and implementation.</p></div>
+      <div style="display:flex;flex-direction:column;gap:14px;background:#fff;padding:24px"><span aria-hidden="true" style="width:48px;height:48px;border:1px dashed var(--grey-400);background:#fff;display:flex;align-items:center;justify-content:center;color:#000"><x-import component-from-global-scope="NexuraDesignSystem_19251d.Icon" name="database" size="{{ 24 }}" hint-size="24px,24px"></x-import></span><h3 style="margin:0;font:500 18px/1.3 var(--font-sans);letter-spacing:-0.04em">Data &amp; AI communities</h3><p style="margin:0;font:400 15px/1.5 var(--font-sans);color:var(--grey-700)">Data analysts, engineers, machine-learning practitioners and AI learners. Relevant to data work, research, technical learning and product testing.</p></div>
+      <div style="display:flex;flex-direction:column;gap:14px;background:#fff;padding:24px"><span aria-hidden="true" style="width:48px;height:48px;border:1px dashed var(--grey-400);background:#fff;display:flex;align-items:center;justify-content:center;color:#000"><x-import component-from-global-scope="NexuraDesignSystem_19251d.Icon" name="align-center-horizontal" size="{{ 24 }}" hint-size="24px,24px"></x-import></span><h3 style="margin:0;font:500 18px/1.3 var(--font-sans);letter-spacing:-0.04em">Design communities</h3><p style="margin:0;font:400 15px/1.5 var(--font-sans);color:var(--grey-700)">UX, UI, product and visual designers. Relevant to user research, product feedback and design evaluation.</p></div>
+      <div style="display:flex;flex-direction:column;gap:14px;background:#fff;padding:24px"><span aria-hidden="true" style="width:48px;height:48px;border:1px dashed var(--grey-400);background:#fff;display:flex;align-items:center;justify-content:center;color:#000"><x-import component-from-global-scope="NexuraDesignSystem_19251d.Icon" name="target" size="{{ 24 }}" hint-size="24px,24px"></x-import></span><h3 style="margin:0;font:500 18px/1.3 var(--font-sans);letter-spacing:-0.04em">Product communities</h3><p style="margin:0;font:400 15px/1.5 var(--font-sans);color:var(--grey-700)">Product managers, analysts and growth practitioners. Relevant to product testing, market research and learning programmes.</p></div>
+      <div style="display:flex;flex-direction:column;gap:14px;background:#fff;padding:24px"><span aria-hidden="true" style="width:48px;height:48px;border:1px dashed var(--grey-400);background:#fff;display:flex;align-items:center;justify-content:center;color:#000"><x-import component-from-global-scope="NexuraDesignSystem_19251d.Icon" name="hand-heart" size="{{ 24 }}" hint-size="24px,24px"></x-import></span><h3 style="margin:0;font:500 18px/1.3 var(--font-sans);letter-spacing:-0.04em">Women in tech communities</h3><p style="margin:0;font:400 15px/1.5 var(--font-sans);color:var(--grey-700)">Communities supporting women and gender minorities across technical disciplines and career stages. Relevant to programmes where representation and audience fit matter.</p></div>
+      <div style="display:flex;flex-direction:column;gap:14px;background:#fff;padding:24px"><span aria-hidden="true" style="width:48px;height:48px;border:1px dashed var(--grey-400);background:#fff;display:flex;align-items:center;justify-content:center;color:#000"><x-import component-from-global-scope="NexuraDesignSystem_19251d.Icon" name="path" size="{{ 24 }}" hint-size="24px,24px"></x-import></span><h3 style="margin:0;font:500 18px/1.3 var(--font-sans);letter-spacing:-0.04em">Web3 communities</h3><p style="margin:0;font:400 15px/1.5 var(--font-sans);color:var(--grey-700)">Builders, learners and practitioners working on blockchain and decentralised technology. Relevant to developer education, hackathons and ecosystem activation.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-loc" style="border-top:1px dashed var(--grey-300);padding:clamp(64px,8vw,100px) clamp(20px,5vw,64px);display:flex;flex-wrap:wrap;gap:24px 64px">
+    <h2 id="h-loc" style="flex:1 1 280px;margin:0;font:500 clamp(30px,4vw,40px)/1.2 var(--font-sans);letter-spacing:-0.04em">Locations and local knowledge</h2>
+    <div style="flex:2 1 440px;display:flex;flex-direction:column;gap:14px">
+      <p style="margin:0;font:400 17px/1.55 var(--font-sans);color:var(--grey-700)">Propel serves companies working across borders, with community relationships rooted in actual places. Programmes across different markets show how local recruitment and delivery can meterially support different enterprise objectives.</p>
+      
+    </div>
+  </section>
+
+  <div style="background:#fff;overflow:hidden">
+  <section aria-labelledby="h-cta" style="position:relative;z-index:1;border-top:1px dashed var(--grey-300);padding:clamp(72px,9vw,120px) clamp(20px,5vw,64px);display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px">
+    <div aria-hidden="true" style="position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(0,0,0,.018) 2px,transparent 2px),linear-gradient(90deg,rgba(0,0,0,.018) 2px,transparent 2px);background-size:48px 48px;background-position:center top;-webkit-mask-image:radial-gradient(ellipse 75% 90% at 50% 40%,#000 10%,transparent 80%);mask-image:radial-gradient(ellipse 75% 90% at 50% 40%,#000 10%,transparent 80%)"></div>
+    <h2 id="h-cta" style="margin:0;font:500 clamp(30px,4vw,44px)/1.15 var(--font-sans);letter-spacing:-0.04em">Discuss your audience</h2>
+    <p style="margin:0;max-width:520px;font:400 17px/1.5 var(--font-sans);color:var(--grey-700);text-wrap:balance">We'll help identify the communities and participant requirements that fit the work.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
+      <x-import component-from-global-scope="NexuraDesignSystem_19251d.Button" href="/contact" hint-size="190px,44px">Start a conversation</x-import>
+      <x-import component-from-global-scope="NexuraDesignSystem_19251d.Button" variant="outline" href="/contact?topic=Community%20partnership" hint-size="170px,44px">Join the ecosystem</x-import>
+    </div>
+  </section>
+  <img aria-hidden="true" src="assets/propel-ecosystem-closing.webp" alt="" width="1916" height="821" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;margin-top:calc(-1 * clamp(40px,11vw,150px));pointer-events:none;user-select:none;position:relative">
+  </div>
+</main>
+<dc-import name="site-footer" hint-size="100%,420px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const BASE = 'https://res.cloudinary.com/dly7glzjs/image/upload/c_fit,w_112,h_112,f_auto,q_auto/';
+class Component extends DCLogic {
+  state = { all: [], q: '', disc: '', loc: '', focus: '', limit: 24 };
+  componentDidMount() { import(new URL('communities-data.js', location.href).href).then(m => this.setState({ all: m.COMMUNITIES })); }
+  renderVals() {
+    const { all, q, disc, loc, focus, limit } = this.state;
+    const needle = q.trim().toLowerCase();
+    const women = /women|woman|girls|ladies|female|gender/i;
+    const list = all.filter(c => (!disc || c.g.indexOf(disc) >= 0) && (!loc || c.c === loc) && (!focus || women.test(c.n + ' ' + c.d)) && (!needle || (c.n + ' ' + c.d + ' ' + c.c + ' ' + c.k.join(' ')).toLowerCase().indexOf(needle) >= 0));
+    const uniq = (f) => Array.from(new Set(all.map(f).filter(Boolean))).sort();
+    const reset = { limit: 24 };
+    const set = k => e => this.setState(Object.assign({ [k]: e.target.value }, reset));
+    const skills = [['Full-stack engineering', 28], ['Product design and UX', 19], ['Data and ML engineering', 16], ['DevOps and platform', 12], ['Product management', 9]].map(([label, v], i) => ({ label, v, text: v + '%', id: 'skill-' + i }));
+    return {
+      skills,
+      total: all.length, countryCount: new Set(all.map(c => c.c).filter(c => c !== 'Global')).size,
+      q, disc, loc, focus, empty: all.length > 0 && list.length === 0,
+      countText: all.length ? 'Showing ' + Math.min(limit, list.length) + ' of ' + list.length + ' communities' : '',
+      discOpts: [{ v: '', l: 'All disciplines' }].concat(['Engineering', 'Design', 'Data & AI', 'Cloud & security', 'Product & projects', 'Growth & community'].map(x => ({ v: x, l: x }))),
+      locOpts: [{ v: '', l: 'All countries' }].concat(uniq(c => c.c).map(x => ({ v: x, l: x }))),
+      onQ: set('q'), onDisc: set('disc'), onLoc: set('loc'), onFocus: set('focus'),
+      clear: () => this.setState({ q: '', disc: '', loc: '', focus: '', limit: 24 }),
+      more: list.length > limit, showMore: () => this.setState({ limit: limit + 24 }),
+      onImgErr: e => { e.target.style.display = 'none'; },
+      shown: list.slice(0, limit).map(c => ({ name: c.n, country: c.c, desc: c.d, logo: BASE + c.l, initials: c.n.replace(/[^A-Za-z0-9 ]/g, '').split(' ').filter(Boolean).slice(0, 2).map(w => w[0]).join('').toUpperCase(), tags: c.g.slice(0, 2) }))
+    };
+  }
+}
+</script>
+</body>
+</html>

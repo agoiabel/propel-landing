@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/nexura-design-system-19251d3b-6029-4068-a5c5-a67a7d870366/styles.css">
+  <script src="_ds/nexura-design-system-19251d3b-6029-4068-a5c5-a67a7d870366/_ds_bundle.js"></script>
+</helmet>
+<header ref="{{ rootRef }}" style="position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--grey-200)">
+  <a href="#main" style="position:absolute;left:-9999px;top:8px;padding:10px 16px;background:#000;color:#fff;border-radius:100px;font:500 14px/1.3 var(--font-sans);z-index:60" style-focus="left:16px">Skip to content</a>
+  <div style="max-width:1290px;margin:0 auto;padding:0 clamp(20px,4vw,40px);height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px;box-sizing:border-box">
+    <a href="/" aria-label="Propel home" style="display:flex;align-items:center;min-height:44px">
+      <img src="assets/propel-logo-black.png" alt="Propel" style="height:24px;width:auto;display:block">
+    </a>
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <nav aria-label="Main" style="flex:1;display:flex;justify-content:center">
+        <ul style="list-style:none;margin:0;padding:0;display:flex;align-items:center;gap:4px">
+          <li data-dd="1" style="position:relative">
+            <button type="button" aria-expanded="{{ solExpanded }}" aria-controls="nav-solutions" onClick="{{ toggleSol }}" style="display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px;border:0;border-radius:100px;background:{{ solBg }};font:500 15px/1 var(--font-sans);letter-spacing:-0.03em;color:#000;cursor:pointer" style-hover="background:var(--grey-100)">Solutions<span aria-hidden="true" style="width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-2px) rotate(45deg)"></span></button>
+            <sc-if value="{{ solOpen }}">
+              <div id="nav-solutions" style="position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);width:600px;background:#fff;border:1px solid var(--grey-200);border-radius:12px;box-shadow:0 5px 20px rgba(0,0,0,.08);padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:2px">
+                <sc-for list="{{ solutions }}" as="s" hint-placeholder-count="6">
+                  <a href="{{ s.href }}" style="display:flex;align-items:center;gap:16px;padding:12px 14px;border-radius:8px;text-decoration:none;color:#000" style-hover="background:var(--grey-50)">
+                    <span aria-hidden="true" style="flex:none;width:48px;height:48px;border:1px dashed var(--grey-300);display:flex;align-items:center;justify-content:center;color:#3a3a3a"><x-import component-from-global-scope="NexuraDesignSystem_19251d.Icon" name="{{ s.icon }}" size="{{ 24 }}" hint-size="24px,24px"></x-import></span>
+                    <span style="display:flex;flex-direction:column;gap:3px"><span style="font:500 15px/1.3 var(--font-sans);letter-spacing:-0.03em">{{ s.name }}</span>
+                    <span style="font:400 13px/1.4 var(--font-sans);color:var(--grey-700);letter-spacing:-0.02em">{{ s.desc }}</span></span>
+                  </a>
+                </sc-for>
+                <a href="/solutions" style="grid-column:1 / -1;margin-top:6px;padding:14px 16px;border-top:1px dashed var(--grey-200);font:500 14px/1.3 var(--font-sans);color:#000;text-decoration:none">All solutions →</a>
+              </div>
+            </sc-if>
+          </li>
+          <sc-for list="{{ mainLinks }}" as="l" hint-placeholder-count="3">
+            <li><a href="{{ l.href }}" aria-current="{{ l.current }}" style="display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border-radius:100px;background:{{ l.bg }};font:500 15px/1 var(--font-sans);letter-spacing:-0.03em;color:#000;text-decoration:none" style-hover="background:var(--grey-100);color:#000">{{ l.label }}</a></li>
+          </sc-for>
+          <li data-dd="1" style="position:relative">
+            <button type="button" aria-expanded="{{ coExpanded }}" aria-controls="nav-company" onClick="{{ toggleCo }}" style="display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px;border:0;border-radius:100px;background:{{ coBg }};font:500 15px/1 var(--font-sans);letter-spacing:-0.03em;color:#000;cursor:pointer" style-hover="background:var(--grey-100)">Company<span aria-hidden="true" style="width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-2px) rotate(45deg)"></span></button>
+            <sc-if value="{{ coOpen }}">
+              <div id="nav-company" style="position:absolute;top:calc(100% + 12px);left:0;width:340px;background:#fff;border:1px solid var(--grey-200);border-radius:12px;box-shadow:0 5px 20px rgba(0,0,0,.08);padding:8px;display:flex;flex-direction:column;gap:2px">
+                <sc-for list="{{ companyLinks }}" as="c" hint-placeholder-count="3">
+                  <a href="{{ c.href }}" style="display:flex;align-items:center;gap:16px;padding:12px 14px;border-radius:8px;color:#000;text-decoration:none" style-hover="background:var(--grey-50);color:#000">
+                    <span aria-hidden="true" style="flex:none;width:48px;height:48px;border:1px dashed var(--grey-300);display:flex;align-items:center;justify-content:center;color:#3a3a3a"><x-import component-from-global-scope="NexuraDesignSystem_19251d.Icon" name="{{ c.icon }}" size="{{ 24 }}" hint-size="24px,24px"></x-import></span>
+                    <span style="display:flex;flex-direction:column;gap:3px"><span style="font:500 15px/1.3 var(--font-sans);letter-spacing:-0.03em">{{ c.label }}</span><span style="font:400 13px/1.4 var(--font-sans);color:var(--grey-700)">{{ c.desc }}</span></span>
+                  </a>
+                </sc-for>
+              </div>
+            </sc-if>
+          </li>
+        </ul>
+      </nav>
+      <x-import component-from-global-scope="NexuraDesignSystem_19251d.Button" href="/contact" hint-size="190px,44px">Start a conversation</x-import>
+    </sc-if>
+    <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+      <button type="button" ref="{{ menuBtnRef }}" aria-expanded="{{ mobileExpanded }}" aria-controls="mobile-menu" onClick="{{ toggleMobile }}" style="display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 18px;border:1px solid var(--grey-200);border-radius:100px;background:#fff;font:500 15px/1 var(--font-sans);color:#000;cursor:pointer">{{ menuLabel }}</button>
+    </sc-if>
+  </div>
+  <sc-if value="{{ mobileOpen }}">
+    <nav id="mobile-menu" aria-label="Main" style="border-top:1px solid var(--grey-200);background:#fff;max-height:calc(100vh - 73px);overflow-y:auto;padding:12px clamp(20px,4vw,40px) 28px;display:flex;flex-direction:column;gap:20px">
+      <div style="display:flex;flex-direction:column">
+        <p style="margin:12px 0 4px;font:500 13px/1.4 var(--font-sans);color:var(--grey-700)">Solutions</p>
+        <sc-for list="{{ solutions }}" as="s">
+          <a href="{{ s.href }}" style="display:flex;align-items:center;min-height:44px;font:500 17px/1.3 var(--font-sans);letter-spacing:-0.03em;color:#000;text-decoration:none;border-bottom:1px dashed var(--grey-200)">{{ s.name }}</a>
+        </sc-for>
+        <a href="/solutions" ref="{{ firstMobileRef }}" style="display:flex;align-items:center;min-height:44px;font:500 17px/1.3 var(--font-sans);color:#000;text-decoration:none">All solutions →</a>
+      </div>
+      <div style="display:flex;flex-direction:column">
+        <sc-for list="{{ mainLinks }}" as="l">
+          <a href="{{ l.href }}" aria-current="{{ l.current }}" style="display:flex;align-items:center;min-height:48px;font:500 20px/1.3 var(--font-sans);letter-spacing:-0.03em;color:#000;text-decoration:none;border-bottom:1px solid var(--grey-200)">{{ l.label }}</a>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-direction:column">
+        <p style="margin:0 0 4px;font:500 13px/1.4 var(--font-sans);color:var(--grey-700)">Company</p>
+        <sc-for list="{{ companyLinks }}" as="c">
+          <a href="{{ c.href }}" style="display:flex;align-items:center;min-height:44px;font:500 17px/1.3 var(--font-sans);color:#000;text-decoration:none;border-bottom:1px dashed var(--grey-200)">{{ c.label }}</a>
+        </sc-for>
+      </div>
+      <x-import component-from-global-scope="NexuraDesignSystem_19251d.Button" href="/contact" full-width="{{ true }}" hint-size="100%,44px">Start a conversation</x-import>
+    </nav>
+  </sc-if>
+</header>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;80px&quot;},&quot;current&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;&quot;,&quot;solutions&quot;,&quot;how&quot;,&quot;ecosystem&quot;,&quot;results&quot;,&quot;company&quot;],&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { open: null, mobile: false, w: typeof window !== 'undefined' ? window.innerWidth : 1300 };
+  rootRef = React.createRef();
+  menuBtnRef = React.createRef();
+  firstMobileRef = React.createRef();
+  componentDidMount() {
+    this.onResize = () => this.setState({ w: window.innerWidth });
+    this.onKey = (e) => {
+      if (e.key !== 'Escape') return;
+      if (this.state.open) {
+        const id = this.state.open;
+        this.setState({ open: null });
+        const btn = this.rootRef.current && this.rootRef.current.querySelector('[aria-controls="nav-' + id + '"]');
+        if (btn) btn.focus();
+      } else if (this.state.mobile) {
+        this.setState({ mobile: false });
+        this.menuBtnRef.current && this.menuBtnRef.current.focus();
+      }
+    };
+    this.onDown = (e) => { if (this.state.open && this.rootRef.current && !e.target.closest('[data-dd]')) this.setState({ open: null }); };
+    this.onFocusIn = (e) => { if (this.state.open && this.rootRef.current && !this.rootRef.current.contains(e.target)) this.setState({ open: null }); };
+    window.addEventListener('resize', this.onResize);
+    document.addEventListener('keydown', this.onKey);
+    document.addEventListener('mousedown', this.onDown);
+    document.addEventListener('focusin', this.onFocusIn);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+    document.removeEventListener('keydown', this.onKey);
+    document.removeEventListener('mousedown', this.onDown);
+    document.removeEventListener('focusin', this.onFocusIn);
+  }
+  componentDidUpdate(_, prev) {
+    if (this.state.mobile && !prev.mobile) { let n = 0; const tryFocus = () => { const el = document.querySelector('#mobile-menu a'); if (el) el.focus(); else if (n++ < 20) requestAnimationFrame(tryFocus); }; requestAnimationFrame(tryFocus); }
+  }
+  renderVals() {
+    const cur = this.props.current || '';
+    const narrow = this.state.w < 1080;
+    const open = narrow ? null : this.state.open;
+    const mk = (key, label, href) => ({ label, href, current: cur === key ? 'page' : undefined, bg: cur === key ? 'var(--grey-100)' : 'transparent' });
+    return {
+      wide: !narrow, narrow,
+      solOpen: open === 'solutions', coOpen: open === 'company',
+      solExpanded: open === 'solutions' ? 'true' : 'false', coExpanded: open === 'company' ? 'true' : 'false',
+      solBg: cur === 'solutions' || open === 'solutions' ? 'var(--grey-100)' : 'transparent',
+      coBg: cur === 'company' || open === 'company' ? 'var(--grey-100)' : 'transparent',
+      toggleSol: () => this.setState(s => ({ open: s.open === 'solutions' ? null : 'solutions' })),
+      toggleCo: () => this.setState(s => ({ open: s.open === 'company' ? null : 'company' })),
+      mobileOpen: narrow && this.state.mobile, mobileExpanded: this.state.mobile ? 'true' : 'false',
+      menuLabel: this.state.mobile ? 'Close' : 'Menu',
+      toggleMobile: () => this.setState(s => ({ mobile: !s.mobile })),
+      rootRef: this.rootRef, menuBtnRef: this.menuBtnRef, firstMobileRef: this.firstMobileRef,
+      solutions: [
+        { icon: 'chalkboard', name: 'Learning & certification', desc: 'Learners, cohorts and certification pathways.', href: '/solution-learning-certification' },
+        { icon: 'plugs-connected', name: 'Developer programmes', desc: 'Onboarding, hackathons and projects on your stack.', href: '/solution-developer-ecosystems' },
+        { icon: 'target', name: 'Product adoption', desc: 'Relevant users testing the workflows that matter.', href: '/solution-product-adoption' },
+        { icon: 'database', name: 'AI & research', desc: 'Language, data and defined research tasks.', href: '/solution-ai-research' },
+        { icon: 'money', name: 'Talent & workforce', desc: 'Specialised hiring and talent pipelines.', href: '/solution-workforce-activation' },
+        { icon: 'chart-bar', name: 'Ecosystem growth', desc: 'Recurring programmes that keep people involved.', href: '/solution-ecosystem-growth' }
+      ],
+      mainLinks: [mk('how', 'How it works', '/how-it-works'), mk('ecosystem', 'Ecosystem', '/ecosystem'), mk('results', 'Case Studies', '/case-studies')],
+      companyLinks: [{ icon: 'user-sound', label: 'About', desc: 'Our story and team', href: '/about' }, { icon: 'list', label: 'Insights', desc: 'Ideas and lessons', href: '/insights' }, { icon: 'hand-heart', label: 'For communities', desc: 'Join the ecosystem', href: '/for-communities' }]
+    };
+  }
+}
+</script>
+</body>
+</html>

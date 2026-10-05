@@ -1,0 +1,35 @@
+:root{
+/* Spacing — values used in the Framer layout (not snapped to a grid) */
+--space-3:3px;
+--space-4:4px;
+--space-8:8px;
+--space-10:10px;
+--space-12:12px;
+--space-16:16px;
+--space-20:20px;
+--space-24:24px;
+--space-32:32px;
+--space-40:40px;
+--space-64:64px;
+--space-80:80px;
+--space-100:100px;
+
+/* Layout */
+--container-max:1250px;
+--container-pad-x:64px;
+--container-pad-x-tablet:40px;
+--container-pad-x-mobile:20px;
+--page-gutter:20px;
+--section-pad-y:100px;
+--footer-pad-y:80px;
+--nav-pad-y:16px;
+
+/* Radii — the brand is square-cornered except pills and floating UI */
+--radius-none:0;
+--radius-xs:4px;
+--radius-sm:10px;
+--radius-md:12px;
+--radius-thumb:14px;
+--radius-lg:16px;
+--radius-pill:100px;
+}

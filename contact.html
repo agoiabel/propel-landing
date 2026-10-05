@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>Start a conversation | Propel</title>
+  <meta name="description" content="Tell Propel the goal, the audience and the timing. We'll help work through the programme and delivery required.">
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="_ds/nexura-design-system-19251d3b-6029-4068-a5c5-a67a7d870366/styles.css">
+  <script src="_ds/nexura-design-system-19251d3b-6029-4068-a5c5-a67a7d870366/_ds_bundle.js"></script>
+  <script src="site-motion.js"></script>
+  <style>body{margin:0;background:#fff;color:#000;font-family:var(--font-sans);font-feature-settings:var(--font-features);-webkit-font-smoothing:antialiased}a{color:inherit}a:hover{color:var(--blue-ink)}:focus-visible{outline:2px solid #517ffc;outline-offset:3px}@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}input::placeholder,textarea::placeholder{color:#6b6a6a}</style>
+</helmet>
+<dc-import name="site-header" current="" hint-size="100%,73px"></dc-import>
+<main id="main" style="max-width:1290px;margin:0 auto;border-left:1px dashed var(--grey-300);border-right:1px dashed var(--grey-300);box-sizing:border-box">
+  <section aria-labelledby="h1" style="background-color:#fff;background-image:radial-gradient(ellipse 50% 50% at 50% 50%,#fff 18%,rgba(255,255,255,0) 100%),radial-gradient(rgba(0,0,0,.08) 1px,transparent 1.3px);background-size:100% 100%,24px 24px;display:flex;flex-wrap:wrap;align-items:stretch;overflow:hidden">
+    <div style="padding:clamp(64px,9vw,112px) clamp(20px,5vw,64px) clamp(40px,5vw,56px);display:flex;flex-direction:column;align-items:flex-start;gap:24px;flex:1 1 420px;min-width:0;box-sizing:border-box;justify-content:center">
+    <x-import component-from-global-scope="NexuraDesignSystem_19251d.Tag" hint-size="150px,26px">Contact</x-import>
+    <h1 id="h1" style="margin:0;font:500 clamp(40px,6vw,64px)/1.08 var(--font-sans);letter-spacing:-0.045em">Start a <span style="color:#1b4fd8">conversation</span></h1>
+    <p style="margin:0;max-width:640px;font:400 clamp(17px,1.6vw,19px)/1.5 var(--font-sans);letter-spacing:-0.02em;color:var(--grey-700)">Tell us the goal, the audience and the timing. We'll help work through the programme and delivery required.</p>
+    <a href="#brief-form" style="display:inline-flex;align-items:center;min-height:44px;font:500 16px/1.3 var(--font-sans);text-decoration:underline;text-underline-offset:4px;color:#1b4fd8" style-hover="color:#0c2f8f">Send a brief ↓</a>
+  </div>
+    <div aria-hidden="true" style="flex:1.25 1 440px;position:relative;min-height:clamp(220px,34vw,480px)"><img src="assets/propel-contact-header.webp" alt="" width="1672" height="941" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;user-select:none;object-position:82% 70%"></div>
+  </section>
+
+  <section style="border-top:1px dashed var(--grey-300);padding:clamp(48px,6vw,80px) clamp(20px,5vw,64px);background:var(--grey-100);display:flex;flex-wrap:wrap;gap:40px 56px;align-items:flex-start">
+    <div id="brief-form" style="flex:2 1 520px;min-width:0;scroll-margin-top:90px">
+      <sc-if value="{{ editing }}" hint-placeholder-val="{{ true }}">
+        <form noValidate="{{ true }}" onSubmit="{{ onSubmit }}" aria-labelledby="h-form" style="background:#fff;padding:clamp(20px,4vw,40px);display:flex;flex-direction:column;gap:20px">
+          <h2 id="h-form" style="margin:0;font:500 clamp(24px,3vw,30px)/1.25 var(--font-sans);letter-spacing:-0.04em">{{ formTitle }}</h2>
+          <sc-if value="{{ hasErrors }}">
+            <div ref="{{ summaryRef }}" tabindex="-1" role="alert" style="padding:16px 18px;border:1.5px solid #b42318;background:#fef3f2;display:flex;flex-direction:column;gap:6px">
+              <p style="margin:0;font:500 15px/1.4 var(--font-sans);color:#912018">Please check {{ errorCount }} before sending.</p>
+              <ul style="margin:0;padding-left:18px;font:400 14px/1.5 var(--font-sans);color:#912018">
+                <sc-for list="{{ errorList }}" as="e"><li><a href="{{ e.href }}" style="color:#912018">{{ e.msg }}</a></li></sc-for>
+              </ul>
+            </div>
+          </sc-if>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:20px">
+            <sc-for list="{{ shortFields }}" as="f" hint-placeholder-count="3">
+              <div style="display:flex;flex-direction:column;gap:6px">
+                <label for="{{ f.id }}" style="font:500 14px/1.4 var(--font-sans)">{{ f.label }} <span style="font-weight:400;color:var(--grey-700)">{{ f.req }}</span></label>
+                <input id="{{ f.id }}" name="{{ f.key }}" type="{{ f.type }}" autoComplete="{{ f.ac }}" value="{{ f.value }}" onInput="{{ f.onInput }}" aria-invalid="{{ f.invalid }}" aria-describedby="{{ f.errId }}" style="min-height:48px;padding:0 14px;border:1px solid {{ f.border }};border-radius:8px;background:var(--grey-50);font:400 16px/1.3 var(--font-sans);color:#000;box-sizing:border-box;width:100%">
+                <sc-if value="{{ f.hasError }}"><p id="{{ f.errId }}" style="margin:0;font:500 13px/1.4 var(--font-sans);color:#b42318">{{ f.error }}</p></sc-if>
+              </div>
+            </sc-for>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:20px">
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <label for="f-topic" style="font:500 14px/1.4 var(--font-sans)">What are you planning? <span style="font-weight:400;color:var(--grey-700)">(required)</span></label>
+              <select id="f-topic" value="{{ topic }}" onChange="{{ onTopic }}" aria-invalid="{{ topicInvalid }}" aria-describedby="err-topic" style="min-height:48px;padding:0 12px;border:1px solid {{ topicBorder }};border-radius:8px;background:var(--grey-50);font:400 16px/1.3 var(--font-sans);color:#000;width:100%">
+                <option value="">Select…</option>
+                <sc-for list="{{ topics }}" as="t"><option value="{{ t }}">{{ t }}</option></sc-for>
+              </select>
+              <sc-if value="{{ topicHasError }}"><p id="err-topic" style="margin:0;font:500 13px/1.4 var(--font-sans);color:#b42318">Choose what you are planning.</p></sc-if>
+            </div>
+            <sc-if value="{{ showScope }}">
+              <div style="display:flex;flex-direction:column;gap:6px">
+                <label for="f-scope" style="font:500 14px/1.4 var(--font-sans)">How will the work run?</label>
+                <select id="f-scope" value="{{ scope }}" onChange="{{ onScope }}" style="min-height:48px;padding:0 12px;border:1px solid var(--grey-300);border-radius:8px;background:var(--grey-50);font:400 16px/1.3 var(--font-sans);color:#000;width:100%">
+                  <option value="">Not sure yet</option>
+                  <option value="Focused project">Focused project</option>
+                  <option value="Multi-stage programme">Multi-stage programme</option>
+                  <option value="Recurring activation">Recurring activation</option>
+                </select>
+              </div>
+            </sc-if>
+          </div>
+          <sc-for list="{{ longFields }}" as="f" hint-placeholder-count="3">
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <label for="{{ f.id }}" style="font:500 14px/1.4 var(--font-sans)">{{ f.label }}</label>
+              <textarea id="{{ f.id }}" rows="{{ f.rows }}" placeholder="{{ f.ph }}" value="{{ f.value }}" onInput="{{ f.onInput }}" style="padding:12px 14px;border:1px solid var(--grey-300);border-radius:8px;background:var(--grey-50);font:400 16px/1.45 var(--font-sans);color:#000;resize:vertical;box-sizing:border-box;width:100%"></textarea>
+            </div>
+          </sc-for>
+          <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;padding-top:8px;border-top:1px dashed var(--grey-200)">
+            <button type="submit" disabled="{{ sending }}" style="min-height:48px;padding:0 24px;border:1px solid var(--grey-700);border-radius:100px;background:#000;color:#fff;box-shadow:0 2px 10px rgba(0,0,0,.2);font:500 16px/1 var(--font-sans);letter-spacing:-0.03em;cursor:pointer">{{ submitLabel }}</button>
+            <sc-if value="{{ sendError }}"><p role="alert" style="margin:0;flex:1 1 260px;font:500 14px/1.5 var(--font-sans);color:#b42318">We couldn't send your brief. Please try again, or email <a href="mailto:businessteam@propel.io" style="color:#b42318">businessteam@propel.io</a>.</p></sc-if>
+          </div>
+        </form>
+      </sc-if>
+      <sc-if value="{{ prepared }}" hint-placeholder-val="{{ false }}">
+        <div style="background:#fff;padding:clamp(24px,5vw,56px);display:flex;flex-direction:column;align-items:flex-start;gap:16px">
+          <div ref="{{ preparedRef }}" tabindex="-1" role="status" style="display:flex;flex-direction:column;gap:12px;outline:none">
+            <h2 style="margin:0;font:500 clamp(28px,3.4vw,36px)/1.2 var(--font-sans);letter-spacing:-0.04em">Thanks. We have your brief.</h2>
+            <p style="margin:0;max-width:480px;font:400 16px/1.55 var(--font-sans);color:var(--grey-700)">Our team will read it and get back to you at {{ sentTo }}.</p>
+          </div>
+          <button type="button" onClick="{{ backToEdit }}" style="min-height:48px;padding:0 22px;border:1px solid var(--grey-300);border-radius:100px;background:#fff;font:500 16px/1 var(--font-sans);color:#000;cursor:pointer">Send another brief</button>
+        </div>
+      </sc-if>
+    </div>
+    <aside aria-label="Other ways to reach Propel" style="flex:1 1 280px;display:flex;flex-direction:column;gap:2px">
+      <div style="background:#fff;padding:24px;display:flex;flex-direction:column;gap:10px">
+        <h2 style="margin:0;font:500 19px/1.3 var(--font-sans);letter-spacing:-0.04em">Community leaders</h2>
+        <p style="margin:0;font:400 15px/1.5 var(--font-sans);color:var(--grey-700)">Tell us about your community and the opportunities your members want to access.</p>
+        <a href="/contact?topic=Community%20partnership" onClick="{{ toCommunity }}" style="align-self:flex-start;display:inline-flex;align-items:center;min-height:44px;font:500 15px/1.3 var(--font-sans);text-decoration:underline;text-underline-offset:4px;color:#1b4fd8" style-hover="color:#0c2f8f">Join the ecosystem →</a>
+      </div>
+      <div style="background:#fff;padding:24px;display:flex;flex-direction:column;gap:8px">
+        <h2 style="margin:0;font:500 19px/1.3 var(--font-sans);letter-spacing:-0.04em">Email us</h2>
+        <a href="mailto:hello@propel.io" style="align-self:flex-start;display:inline-flex;align-items:center;min-height:44px;font:500 17px/1.3 var(--font-sans);text-decoration:underline;text-underline-offset:4px;color:#1b4fd8" style-hover="color:#0c2f8f">hello@propel.io</a>
+      </div>
+      <div style="background:#fff;padding:24px;display:flex;flex-direction:column;gap:12px">
+        <h2 style="margin:0;font:500 19px/1.3 var(--font-sans);letter-spacing:-0.04em">Follow Propel</h2>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px">
+          <li><a href="https://www.linkedin.com/company/withpropel/" style="display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid var(--grey-300);border-radius:100px;font:500 14px/1 var(--font-sans);text-decoration:none">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/withpropel/" style="display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid var(--grey-300);border-radius:100px;font:500 14px/1 var(--font-sans);text-decoration:none">Instagram</a></li>
+          <li><a href="https://x.com/WithPropel" style="display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid var(--grey-300);border-radius:100px;font:500 14px/1 var(--font-sans);text-decoration:none">X</a></li>
+        </ul>
+      </div>
+    </aside>
+  </section>
+  <div aria-hidden="true" style="background:#fff;overflow:hidden;border-top:1px dashed var(--grey-300)"><img src="assets/propel-contact-closing.webp" alt="" width="1916" height="821" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;pointer-events:none;user-select:none"></div>
+</main>
+<dc-import name="site-footer" hint-size="100%,420px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const TOPICS = ['Learning or certification', 'Developer programme', 'Product testing or adoption', 'AI or research', 'Workforce needs', 'Ecosystem growth', 'Community partnership'];
+function initState() {
+  const q = new URLSearchParams(typeof location !== 'undefined' ? location.search : '');
+  const topic = TOPICS.indexOf(q.get('topic')) >= 0 ? q.get('topic') : '';
+  const scopes = ['Focused project', 'Multi-stage programme', 'Recurring activation'];
+  return { v: { name: '', email: '', org: '', reach: '', markets: '', timing: '', outcome: '' }, topic, scope: scopes.indexOf(q.get('scope')) >= 0 ? q.get('scope') : '', errors: {}, tried: false, mode: 'edit', brief: '' };
+}
+class Component extends DCLogic {
+  summaryRef = React.createRef();
+  preparedRef = React.createRef();
+  state = initState();
+  validate(s) {
+    const e = {};
+    if (!s.v.name.trim()) e.name = 'Enter your name.';
+    if (!s.v.email.trim()) e.email = 'Enter your email address.';
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s.v.email.trim())) e.email = 'Enter an email address in the format name@example.com.';
+    if (!s.v.org.trim()) e.org = s.topic === 'Community partnership' ? 'Enter your community name.' : 'Enter your company or organisation.';
+    if (!s.topic) e.topic = 'Choose what you are planning.';
+    return e;
+  }
+  compose() {
+    const s = this.state, c = s.topic === 'Community partnership', v = s.v;
+    const L = this.labels(c);
+    const rows = [['Name', v.name], ['Email', v.email], [L.org, v.org], ['Planning', s.topic]];
+    if (!c && s.scope) rows.push(['How the work will run', s.scope]);
+    rows.push([L.reach, v.reach], [L.markets, v.markets]);
+    if (!c) rows.push([L.timing, v.timing]);
+    rows.push([L.outcome, v.outcome]);
+    return 'Brief for Propel\n\n' + rows.filter(r => r[1] && String(r[1]).trim()).map(r => r[0] + ':\n' + String(r[1]).trim()).join('\n\n') + '\n';
+  }
+  labels(c) {
+    return c ? { org: 'Community name', reach: 'Who are your members?', reachPh: 'Skills, interests and experience in your community', markets: 'Where does your community operate?', marketsPh: 'Cities, countries or online', timing: '', outcome: 'What opportunities do your members want to access?', outcomePh: 'Learning, paid work, projects or other opportunities' }
+      : { org: 'Company or organisation', reach: 'Who do you need to reach?', reachPh: 'Skills, experience, community or audience requirements', markets: 'Which markets matter?', marketsPh: 'The locations you have in mind', timing: 'When would you like to start?', timingPh: 'A date or a rough timeframe is fine', outcome: 'Tell us about the outcome', outcomePh: 'What would a useful result look like for your team?' };
+  }
+  renderVals() {
+    const s = this.state, c = s.topic === 'Community partnership', L = this.labels(c);
+    const errs = s.tried ? s.errors : {};
+    const set = k => e => { const val = e.target.value; this.setState(st => { const n = Object.assign({}, st, { v: Object.assign({}, st.v, { [k]: val }) }); return { v: n.v, errors: st.tried ? this.validate(n) : st.errors }; }); };
+    const short = [['name', 'Your name', 'text', 'name'], ['email', 'Work email', 'email', 'email'], ['org', L.org, 'text', 'organization']].map(([key, label, type, ac]) => ({
+      key, label, type, ac, id: 'f-' + key, req: '(required)', value: s.v[key], onInput: set(key), errId: errs[key] ? 'err-' + key : undefined,
+      invalid: errs[key] ? 'true' : undefined, hasError: !!errs[key], error: errs[key], border: errs[key] ? '#b42318' : 'var(--grey-300)'
+    }));
+    const long = [['reach', L.reach, L.reachPh, 3], ['markets', L.markets, L.marketsPh, 2]];
+    if (!c) long.push(['timing', L.timing, L.timingPh, 2]);
+    long.push(['outcome', L.outcome, L.outcomePh, 4]);
+    const order = ['name', 'email', 'org', 'topic'];
+    const errorList = order.filter(k => errs[k]).map(k => ({ msg: errs[k], href: '#f-' + k }));
+    return {
+      editing: s.mode === 'edit', prepared: s.mode === 'prepared',
+      formTitle: c ? 'Tell us about your community' : 'Your brief',
+      shortFields: short,
+      longFields: long.map(([key, label, ph, rows]) => ({ id: 'f-' + key, label, ph, rows, value: s.v[key], onInput: set(key) })),
+      topics: TOPICS, topic: s.topic, scope: s.scope, showScope: !c,
+      topicInvalid: errs.topic ? 'true' : undefined, topicHasError: !!errs.topic, topicBorder: errs.topic ? '#b42318' : 'var(--grey-300)',
+      onTopic: e => { const val = e.target.value; this.setState(st => { const n = Object.assign({}, st, { topic: val }); return { topic: val, errors: st.tried ? this.validate(n) : st.errors }; }); },
+      onScope: e => this.setState({ scope: e.target.value }),
+      hasErrors: errorList.length > 0, errorList, errorCount: errorList.length === 1 ? '1 field' : errorList.length + ' fields',
+      summaryRef: this.summaryRef, preparedRef: this.preparedRef,
+      sending: s.sending ? true : undefined, sendError: !!s.sendError, submitLabel: s.sending ? 'Sending…' : 'Send brief', sentTo: s.v.email,
+      onSubmit: e => {
+        e.preventDefault();
+        if (this.state.sending) return;
+        const errors = this.validate(this.state);
+        if (Object.keys(errors).length) { this.setState({ errors, tried: true }, () => this.summaryRef.current && this.summaryRef.current.focus()); return; }
+        const st = this.state, v = st.v;
+        this.setState({ errors: {}, tried: true, sending: true, sendError: false });
+        fetch('https://formsubmit.co/ajax/businessteam@propel.io', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ _subject: 'New Propel brief: ' + st.topic + (v.org ? ' - ' + v.org : ''), _template: 'table', _captcha: 'false', _replyto: v.email, name: v.name, email: v.email, organisation: v.org, planning: st.topic, how_the_work_will_run: st.scope, audience: v.reach, markets: v.markets, timing: v.timing, outcome: v.outcome, message: this.compose() })
+        }).then(r => r.json().then(j => { if (!r.ok || String(j.success) === 'false') throw new Error('send'); }))
+          .then(() => this.setState({ sending: false, mode: 'prepared' }, () => { this.preparedRef.current && this.preparedRef.current.focus(); const el = document.getElementById('brief-form'); el && window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 90 }); }))
+          .catch(() => this.setState({ sending: false, sendError: true }));
+      },
+      briefText: s.brief, onBrief: e => this.setState({ brief: e.target.value }),
+      mailto: 'mailto:hello@propel.io?subject=' + encodeURIComponent('Brief: ' + (s.topic || 'New enquiry') + (s.v.org ? ' - ' + s.v.org : '')) + '&body=' + encodeURIComponent(s.brief),
+      download: () => { const b = new Blob([s.brief], { type: 'text/plain' }); const a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = 'propel-brief.txt'; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 1000); },
+      backToEdit: () => this.setState({ mode: 'edit' }, () => { const el = document.getElementById('f-name'); el && el.focus(); }),
+      toCommunity: e => { e.preventDefault(); this.setState({ topic: 'Community partnership', mode: 'edit' }); const el = document.getElementById('brief-form'); el && window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 90 }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

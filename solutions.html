@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>Our solutions | Propel</title>
+  <meta name="description" content="Explore six ways to activate Propel's community ecosystem for learning, developer programmes, product adoption, AI research, workforce needs and ecosystem growth.">
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="_ds/nexura-design-system-19251d3b-6029-4068-a5c5-a67a7d870366/styles.css">
+  <script src="_ds/nexura-design-system-19251d3b-6029-4068-a5c5-a67a7d870366/_ds_bundle.js"></script>
+  <script src="site-motion.js"></script>
+  <style>body{margin:0;background:#fff;color:#000;font-family:var(--font-sans);font-feature-settings:var(--font-features);-webkit-font-smoothing:antialiased}a{color:inherit}a:hover{color:var(--blue-ink)}:focus-visible{outline:2px solid #517ffc;outline-offset:3px}@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}</style>
+</helmet>
+<dc-import name="site-header" current="solutions" hint-size="100%,73px"></dc-import>
+<main id="main" style="max-width:1290px;margin:0 auto;border-left:1px dashed var(--grey-300);border-right:1px dashed var(--grey-300);box-sizing:border-box">
+
+  <section aria-labelledby="h1" style="background-color:#fff;background-image:radial-gradient(ellipse 50% 50% at 50% 50%,#fff 18%,rgba(255,255,255,0) 100%),radial-gradient(rgba(0,0,0,.08) 1px,transparent 1.3px);background-size:100% 100%,24px 24px;display:flex;flex-wrap:wrap;align-items:stretch;overflow:hidden">
+    <div style="padding:clamp(64px,9vw,112px) clamp(20px,5vw,64px) clamp(48px,6vw,72px);display:flex;flex-direction:column;align-items:flex-start;gap:24px;flex:1 1 420px;min-width:0;box-sizing:border-box;justify-content:center">
+    <x-import component-from-global-scope="NexuraDesignSystem_19251d.Tag" hint-size="80px,26px">What we do</x-import>
+    <h1 id="h1" style="margin:0;font:500 clamp(40px,6vw,64px)/1.08 var(--font-sans);letter-spacing:-0.045em">Our <span style="color:#1b4fd8">solutions</span></h1>
+    <p style="margin:0;max-width:680px;font:400 clamp(17px,1.6vw,19px)/1.5 var(--font-sans);letter-spacing:-0.02em;color:var(--grey-700);text-wrap:pretty">Choose the work you need people to do. Propel combines community recruitment, participant support and reporting around your goal, whether that is AI research, developer activity, product use, learning or specialist work.</p>
+    <x-import component-from-global-scope="NexuraDesignSystem_19251d.Button" href="/contact" hint-size="180px,44px">Talk through your goal</x-import>
+  </div>
+    <div aria-hidden="true" style="flex:1.25 1 440px;position:relative;min-height:clamp(220px,34vw,480px)"><img src="assets/propel-solutions-header.webp" alt="" width="1672" height="941" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;user-select:none;object-position:82% 70%"></div>
+  </section>
+
+  <section aria-labelledby="h-guide" style="border-top:1px dashed var(--grey-300);padding:clamp(56px,7vw,88px) clamp(20px,5vw,64px);background:var(--grey-100);display:flex;flex-wrap:wrap;gap:40px 56px">
+    <h2 id="h-guide" style="position:absolute;left:-9999px">Find the right solution</h2>
+    <div style="flex:3 1 460px;min-width:0;display:flex;flex-direction:column;gap:36px">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <h3 id="q-goal" style="margin:0;font:500 clamp(22px,2.6vw,28px)/1.3 var(--font-sans);letter-spacing:-0.04em">What do you need people to do?</h3>
+        <div role="group" aria-labelledby="q-goal" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px">
+          <sc-for list="{{ goals }}" as="g" hint-placeholder-count="6">
+            <button type="button" aria-pressed="{{ g.pressed }}" onClick="{{ g.select }}" style="min-height:56px;padding:0 18px;border:1px solid {{ g.border }};border-radius:100px;background:{{ g.bg }};color:{{ g.fg }};font:500 16px/1 var(--font-sans);letter-spacing:-0.03em;cursor:pointer" style-hover="border-color:#000">{{ g.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+      <fieldset style="margin:0;padding:0;border:0;display:flex;flex-direction:column;gap:16px">
+        <legend style="padding:0;margin-bottom:16px;font:500 clamp(22px,2.6vw,28px)/1.3 var(--font-sans);letter-spacing:-0.04em">How will the work run?</legend>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:8px">
+          <sc-for list="{{ modes }}" as="m" hint-placeholder-count="3">
+            <label style="display:flex;align-items:center;gap:12px;min-height:56px;padding:0 18px;background:#fff;border:1px solid {{ m.border }};border-radius:12px;cursor:pointer;font:500 15px/1.3 var(--font-sans);letter-spacing:-0.03em">
+              <input type="radio" name="mode" value="{{ m.label }}" checked="{{ m.checked }}" onChange="{{ m.select }}" style="width:20px;height:20px;margin:0;accent-color:#000;flex:none">{{ m.label }}
+            </label>
+          </sc-for>
+        </div>
+      </fieldset>
+    </div>
+    <div aria-live="polite" style="flex:2 1 340px;min-width:0;background:#fff;border:1px solid var(--grey-200);border-radius:12px;box-shadow:0 5px 20px rgba(0,0,0,.06);padding:28px;display:flex;flex-direction:column;gap:16px;box-sizing:border-box">
+      <p style="margin:0;font:500 13px/1.4 var(--font-sans);color:var(--grey-700)">A relevant solution</p>
+      <h3 style="margin:0;font:500 26px/1.25 var(--font-sans);letter-spacing:-0.04em">{{ sol.name }}</h3>
+      <p style="margin:0;font:400 16px/1.55 var(--font-sans);color:var(--grey-700)">{{ sol.desc }}</p>
+      <div style="padding:16px;background:#fff;border:1px solid var(--grey-200);display:flex;flex-direction:column;gap:6px" data-card="1">
+        <p style="margin:0;font:500 14px/1.4 var(--font-sans)">{{ mode.label }}</p>
+        <p style="margin:0;font:400 14px/1.5 var(--font-sans);color:var(--grey-700)">{{ mode.note }}</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:auto">
+        <x-import component-from-global-scope="NexuraDesignSystem_19251d.Button" href="{{ briefHref }}" hint-size="160px,44px">Discuss this brief</x-import>
+        <a href="{{ sol.href }}" style="display:inline-flex;align-items:center;min-height:44px;font:500 15px/1.3 var(--font-sans);text-decoration:underline;text-underline-offset:4px;color:#1b4fd8" style-hover="color:#0c2f8f">{{ sol.link }}<span aria-hidden="true" style="margin-left:.4em">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-all" style="border-top:1px dashed var(--grey-300);padding:clamp(64px,8vw,100px) clamp(20px,5vw,64px);display:flex;flex-direction:column;gap:32px">
+    <h2 id="h-all" style="margin:0;font:500 clamp(30px,4vw,40px)/1.2 var(--font-sans);letter-spacing:-0.04em">Six solutions</h2>
+    <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column">
+      <sc-for list="{{ solutions }}" as="s" hint-placeholder-count="6">
+        <li style="display:flex;flex-wrap:wrap;gap:12px 48px;padding:28px 0;border-top:1px solid var(--grey-200)">
+          <h3 style="flex:1 1 240px;margin:0;font:500 22px/1.3 var(--font-sans);letter-spacing:-0.04em">{{ s.name }}</h3>
+          <div style="flex:2 1 420px;min-width:0;display:flex;flex-direction:column;gap:10px">
+            <p style="margin:0;font:400 16px/1.55 var(--font-sans);color:var(--grey-700)">{{ s.desc }}</p>
+            <p style="margin:0;font:500 14px/1.45 var(--font-sans)">For: {{ s.for }}</p>
+            <a href="{{ s.href }}" style="align-self:flex-start;display:inline-flex;align-items:center;min-height:44px;font:500 15px/1.3 var(--font-sans);text-decoration:underline;text-underline-offset:4px;color:#1b4fd8" style-hover="color:#0c2f8f">{{ s.link }}<span aria-hidden="true" style="margin-left:.4em">→</span></a>
+          </div>
+        </li>
+      </sc-for>
+    </ul>
+  </section>
+
+  <div style="background:#fff;overflow:hidden">
+  <section aria-labelledby="h-combine" style="position:relative;z-index:1;border-top:1px dashed var(--grey-300);padding:clamp(64px,8vw,100px) clamp(20px,5vw,64px);display:flex;flex-wrap:wrap;gap:32px 64px;align-items:flex-start">
+    <h2 id="h-combine" style="flex:1 1 280px;margin:0;font:500 clamp(30px,4vw,40px)/1.2 var(--font-sans);letter-spacing:-0.04em">Combining solutions</h2>
+    <div style="flex:2 1 440px;min-width:0;display:flex;flex-direction:column;gap:16px;align-items:flex-start">
+      <p style="margin:0;font:400 17px/1.55 var(--font-sans);color:var(--grey-700)">A developer programme can begin with learning and lead into projects. Product research can inform an adoption programme. A capability initiative can build a workforce pipeline.</p>
+      <p style="margin:0;font:400 17px/1.55 var(--font-sans);color:var(--grey-700)">We'll shape the combination around your objective and agree what success looks like at each stage.</p>
+      <x-import component-from-global-scope="NexuraDesignSystem_19251d.Button" href="/contact" hint-size="190px,44px">Start a conversation</x-import>
+    </div>
+  </section>
+  <img aria-hidden="true" src="assets/propel-solutions-closing.webp" alt="" width="1916" height="821" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;margin-top:calc(-1 * clamp(40px,11vw,150px));pointer-events:none;user-select:none;position:relative">
+  </div>
+</main>
+<dc-import name="site-footer" hint-size="100%,420px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { g: 0, m: 0 };
+  renderVals() {
+    const S = [
+      { goal: 'Learn', topic: 'Learning or certification', name: 'Learning & certification', desc: 'Your curriculum needs people who enrol, stay involved and apply what they learn. We recruit learners, organise supported cohorts and track progress through the agreed programme.', for: 'Learning teams, platforms, foundations and programme owners.', link: 'Explore Learning & Certification', href: '/solution-learning-certification' },
+      { goal: 'Build', topic: 'Developer programme', name: 'Developer programmes', desc: 'Build participation around your stack with developer onboarding, technical learning, hackathons and practical projects.', for: 'Developer relations, ecosystem, platform and engineering teams.', link: 'Explore Developer Ecosystems', href: '/solution-developer-ecosystems' },
+      { goal: 'Test', topic: 'Product testing or adoption', name: 'Product adoption', desc: 'Recruit relevant users, test important workflows and support the actions that help people get value from your product.', for: 'Product, growth, customer experience and user research teams.', link: 'Explore Product & Platform Adoption', href: '/solution-product-adoption' },
+      { goal: 'Research', topic: 'AI or research', name: 'AI & research', desc: 'Recruit people for language research, data contribution and defined research tasks. Discuss evaluation recruitment through a scoped pilot.', for: 'AI, research, data and product teams.', link: 'Explore AI & Research', href: '/solution-ai-research' },
+      { goal: 'Hire', topic: 'Workforce needs', name: 'Talent & workforce', desc: 'Connect skills to work through specialised hiring, talent pipelines, capability programmes and implementation projects.', for: 'Talent, engineering, workforce and implementation teams.', link: 'Explore Workforce Activation', href: '/solution-workforce-activation' },
+      { goal: 'Grow', topic: 'Ecosystem growth', name: 'Ecosystem growth', desc: 'Keep people involved through community programming, champions, practical challenges and continuing opportunities.', for: 'Community, partnerships, ecosystem and growth teams.', link: 'Explore Customer & Ecosystem Growth', href: '/solution-ecosystem-growth' }
+    ];
+    const M = [
+      { label: 'Focused project', note: 'A specific research question, test cycle, recruitment need or activation brief with a defined finish.' },
+      { label: 'Multi-stage programme', note: 'A coordinated learning pathway, developer initiative or multi-market activation with several stages.' },
+      { label: 'Recurring activation', note: 'A planned series of activities that supports community participation and product engagement over time.' }
+    ];
+    const sol = S[this.state.g], mode = M[this.state.m];
+    return {
+      sol, mode, solutions: S,
+      briefHref: '/contact?topic=' + encodeURIComponent(sol.topic) + '&scope=' + encodeURIComponent(mode.label),
+      goals: S.map((s, i) => { const on = i === this.state.g; return { label: s.goal, pressed: on ? 'true' : 'false', bg: on ? '#000' : '#fff', fg: on ? '#fff' : '#000', border: on ? '#000' : 'var(--grey-300)', select: () => this.setState({ g: i }) }; }),
+      modes: M.map((m, i) => ({ label: m.label, checked: i === this.state.m, border: i === this.state.m ? '#000' : 'var(--grey-200)', select: () => this.setState({ m: i }) }))
+    };
+  }
+}
+</script>
+</body>
+</html>

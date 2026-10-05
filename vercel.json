@@ -1,0 +1,16 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/results",
+      "destination": "/case-studies",
+      "permanent": true
+    },
+    {
+      "source": "/results/:id",
+      "destination": "/story?id=:id",
+      "permanent": true
+    }
+  ]
+}
