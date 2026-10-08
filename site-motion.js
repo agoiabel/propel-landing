@@ -3,8 +3,10 @@
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var E = 'cubic-bezier(.2,.7,.2,1)';
   var css =
+    'html{overflow-x:hidden}' +
     '.lift{transition:transform .35s ' + E + ',box-shadow .35s ease,background-color .35s ease}' +
     '.lift:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.08);border-color:var(--grey-400)!important}' +
+    '.roll{display:block;overflow:hidden;height:1.2em;line-height:1.2em}.roll>span>span{display:block;height:1.2em;transition:transform .4s '+E+'}button:hover .roll>span>span{transform:translateY(-100%)}button[type=submit]:hover,button[onclick]:hover{box-shadow:0 0 0 4px #f4f4f4}' +
     '.zoom img{transition:transform 1.4s ' + E + '}.zoom:hover img{transform:scale(1.035)}' +
     ':is(a,button)>span[aria-hidden]+span[aria-hidden]+span>span{transition:transform 400ms ' + E + '!important}' +
     ':is(a,button):hover>span[aria-hidden]+span[aria-hidden]+span>span{transform:translateY(-50%)!important}' +

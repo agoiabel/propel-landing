@@ -34,7 +34,28 @@ export const STORIES = [
       { h: 'The results', ps: ['The programme recorded 114,000+ registrations and trained 90,000+ people. Course completion is a separate measure, with 37,000+ completions recorded. More than 10,000 participants were matched to work and income opportunities.'] }
     ],
     cta: { h: 'Start a conversation', p: "Let's discuss the audience, the skills and the opportunity you want the programme to create.", label: 'Scope a learning programme', topic: 'Learning or certification' },
-    related: [{ id: 'google-ai-opportunity-fund', name: 'Google.org AI Opportunity Fund' }]
+    related: [{ id: 'google-ai-opportunity-fund', name: 'Google AI Skills Training' }]
+  },
+  {
+    id: 'google-ai-opportunity-fund', name: 'Google AI Skills Training', cats: ['learning'], catLabel: 'Learning',
+    summary: 'AI skills training delivered through community recruitment, supported cohorts and facilitator-led workshops, with delivery in Portugal.',
+    stats: [], link: 'Read the story', thumb: 'pathway', thumbLabel: 'Course · Cohort · Workshop',
+    title: 'Google AI Skills Training | Propel', eyebrow: 'Learning & Certification', h1: 'Google AI Skills Training',
+    intro: "For Google.org's AI Opportunity Fund, Propel recruited participants through community relationships and supported them through Google AI Essentials and live facilitator-led workshops. Delivery took place in Portugal.",
+    factsTitle: 'Programme context',
+    context: [{ k: 'Location', v: 'Portugal' }, { k: 'Audience', v: 'Immigrant and underserved communities' }, { k: 'Learning', v: 'Google AI Essentials through Coursera' }, { k: 'Delivery', v: 'Community recruitment, cohorts and live workshops' }],
+    visual: { type: 'pathway', title: 'Supported-learning plan', steps: [
+      { t: 'Community recruitment', d: 'Eligible participants reached through community relationships in Portugal.' },
+      { t: 'Supported cohorts', d: 'Learners organised into cohorts for consistent progress and peer participation.' },
+      { t: 'Google AI Essentials', d: 'Course content delivered through Coursera.' },
+      { t: 'Live workshops', d: 'Facilitator-led sessions supporting the learning and its practical application.' }
+    ] },
+    sections: [
+      { h: 'The brief', ps: ['The programme targeted people facing barriers to employment and digital opportunity, including recent immigrants and refugees, unemployed and underemployed adults, and people seeking new career options.', 'The delivery needed to connect those audiences to practical AI learning and provide support as they worked through it.'] },
+      { h: 'How Propel delivered', ps: ['Community recruitment brought eligible participants into the programme. Learners were organised into cohorts to support consistent progress and peer participation.', 'Google AI Essentials provided the course content. Live, facilitator-led workshops added support around the learning and its practical application.'] }
+    ],
+    cta: { h: 'Start a conversation', p: "Tell us who should take part and what they should be able to do afterwards.", label: 'Scope a learning programme', topic: 'Learning or certification' },
+    related: [{ id: 'mastercard-foundation', name: 'Mastercard Foundation' }]
   },
   {
     id: 'hedera', name: 'Hedera', cats: ['developer'], catLabel: 'Developer activation & adoption',
@@ -64,27 +85,6 @@ export const STORIES = [
     quote: { text: '“What stood out in this collaboration was Propel’s ability to convert awareness into real builder participation.”', by: 'Eya, DAR Blockchain' },
     cta: { h: 'Start a conversation', p: "Tell us what you want developers to build, and who should be building it.", label: 'Plan a developer activation', topic: 'Developer activation & adoption' },
     related: [{ id: 'squadco', name: 'SquadCo fintech hackathon' }]
-  },
-  {
-    id: 'google-ai-opportunity-fund', name: 'Google.org AI Opportunity Fund', cats: ['learning'], catLabel: 'Learning',
-    summary: 'AI learning delivered through community recruitment, supported cohorts and workshops in Portugal.',
-    stats: [], link: 'Read the story', thumb: 'pathway', thumbLabel: 'Course · Cohort · Workshop',
-    title: 'AI learning in Portugal | Propel', eyebrow: 'Learning & Certification', h1: 'AI learning in Portugal',
-    intro: "For Google.org's AI Opportunity Fund, Propel recruited participants in Portugal and supported them through Google AI Essentials and live facilitator-led workshops.",
-    factsTitle: 'Programme context',
-    context: [{ k: 'Location', v: 'Portugal' }, { k: 'Audience', v: 'Immigrant and underserved communities' }, { k: 'Learning', v: 'Google AI Essentials through Coursera' }, { k: 'Delivery', v: 'Community recruitment, cohorts and live workshops' }],
-    visual: { type: 'pathway', title: 'Supported-learning plan', steps: [
-      { t: 'Community recruitment', d: 'Eligible participants reached through community relationships in Portugal.' },
-      { t: 'Supported cohorts', d: 'Learners organised into cohorts for consistent progress and peer participation.' },
-      { t: 'Google AI Essentials', d: 'Course content delivered through Coursera.' },
-      { t: 'Live workshops', d: 'Facilitator-led sessions supporting the learning and its practical application.' }
-    ] },
-    sections: [
-      { h: 'The brief', ps: ['The programme targeted people facing barriers to employment and digital opportunity, including recent immigrants and refugees, unemployed and underemployed adults, and people seeking new career options.', 'The delivery needed to connect those audiences to practical AI learning and provide support as they worked through it.'] },
-      { h: 'How Propel delivered', ps: ['Community recruitment brought eligible participants into the programme. Learners were organised into cohorts to support consistent progress and peer participation.', 'Google AI Essentials provided the course content. Live, facilitator-led workshops added support around the learning and its practical application.'] }
-    ],
-    cta: { h: 'Start a conversation', p: "Tell us who should take part and what they should be able to do afterwards.", label: 'Scope a learning programme', topic: 'Learning or certification' },
-    related: [{ id: 'mastercard-foundation', name: 'Mastercard Foundation' }]
   },
   {
     id: 'orange-wolof', name: 'Orange', cats: ['ai'], catLabel: 'AI data & research',

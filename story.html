@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="_ds/nexura-design-system-19251d3b-6029-4068-a5c5-a67a7d870366/styles.css">
   <script src="_ds/nexura-design-system-19251d3b-6029-4068-a5c5-a67a7d870366/_ds_bundle.js"></script>
   <script src="site-motion.js"></script>
-  <style>body{margin:0;background:#fff;color:#000;font-family:var(--font-sans);font-feature-settings:var(--font-features);-webkit-font-smoothing:antialiased}a{color:inherit}a:hover{color:var(--blue-ink)}:focus-visible{outline:2px solid #517ffc;outline-offset:3px}@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}</style>
+  <style>body{margin:0;overflow-x:clip;background:#fff;color:#000;font-family:var(--font-sans);font-feature-settings:var(--font-features);-webkit-font-smoothing:antialiased}a{color:inherit}a:hover{color:var(--blue-ink)}:focus-visible{outline:2px solid #517ffc;outline-offset:3px}@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}</style>
 </helmet>
 <dc-import name="site-header" current="results" hint-size="100%,73px"></dc-import>
 <main id="main" style="max-width:1290px;margin:0 auto;border-left:1px dashed var(--grey-300);border-right:1px dashed var(--grey-300);box-sizing:border-box;min-height:60vh">
@@ -173,7 +173,7 @@
       <div style="flex:2 1 420px;display:flex;flex-direction:column;gap:14px;align-items:flex-start">
         <h2 id="h-cta" style="margin:0;font:500 clamp(28px,3.6vw,40px)/1.15 var(--font-sans);letter-spacing:-0.04em">{{ s.cta.h }}</h2>
         <p style="margin:0;max-width:520px;font:400 17px/1.5 var(--font-sans);color:var(--grey-700)">{{ s.cta.p }}</p>
-        <x-import component-from-global-scope="NexuraDesignSystem_19251d.Button" href="{{ ctaHref }}" hint-size="200px,44px">{{ s.cta.label }}</x-import>
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px"><x-import component-from-global-scope="NexuraDesignSystem_19251d.Button" href="{{ ctaHref }}" hint-size="200px,44px">{{ s.cta.label }}</x-import><x-import component-from-global-scope="NexuraDesignSystem_19251d.Button" variant="outline" href="/case-studies" hint-size="140px,44px">See our work</x-import></div>
       </div>
       <nav aria-label="Related" style="flex:1 1 260px;display:flex;flex-direction:column;gap:4px">
         <p style="margin:0 0 4px;font:500 13px/1.4 var(--font-sans);color:var(--grey-700)">{{ relatedLabel }}</p>
