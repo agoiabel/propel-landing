@@ -19,5 +19,5 @@ Shared files (keep alongside the pages): site-header.dc.html, site-footer.dc.htm
 
 Notes
   - Serve over http(s) from the web root; opening files from disk (file://) will not work.
-  - Contact form posts to formsubmit.co -> businessteam@propel.io. The first submission triggers a one-time confirmation email to that address.
+  - Contact form posts to formsubmit.co -> business@propel.io. The first submission triggers a one-time confirmation email to that address.
   - Community logos on the Ecosystem page load from the Cloudinary URLs in communities-data.js.

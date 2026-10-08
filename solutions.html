@@ -67,7 +67,7 @@
   </section>
 
   <section aria-labelledby="h-all" style="border-top:1px dashed var(--grey-300);padding:clamp(64px,8vw,100px) clamp(20px,5vw,64px);display:flex;flex-direction:column;gap:32px">
-    <h2 id="h-all" style="margin:0;font:500 clamp(30px,4vw,40px)/1.2 var(--font-sans);letter-spacing:-0.04em">Six solutions</h2>
+    <h2 id="h-all" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap">All solutions</h2>
     <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column">
       <sc-for list="{{ solutions }}" as="s" hint-placeholder-count="6">
         <li style="display:flex;flex-wrap:wrap;gap:12px 48px;padding:28px 0;border-top:1px solid var(--grey-200)">
@@ -102,9 +102,9 @@ class Component extends DCLogic {
   renderVals() {
     const S = [
       { goal: 'Learn', topic: 'Learning or certification', name: 'Learning & certification', desc: 'Your curriculum needs people who enrol, stay involved and apply what they learn. We recruit learners, organise supported cohorts and track progress through the agreed programme.', for: 'Learning teams, platforms, foundations and programme owners.', link: 'Explore Learning & Certification', href: '/solution-learning-certification' },
-      { goal: 'Build', topic: 'Developer programme', name: 'Developer programmes', desc: 'Build participation around your stack with developer onboarding, technical learning, hackathons and practical projects.', for: 'Developer relations, ecosystem, platform and engineering teams.', link: 'Explore Developer Ecosystems', href: '/solution-developer-ecosystems' },
+      { goal: 'Build', topic: 'Developer activation & adoption', name: 'Developer activation & adoption', desc: 'Build participation around your stack with developer onboarding, technical learning, hackathons and practical projects.', for: 'Developer relations, ecosystem, platform and engineering teams.', link: 'Explore Developer Activation & Adoption', href: '/solution-developer-ecosystems' },
       { goal: 'Test', topic: 'Product testing or adoption', name: 'Product adoption', desc: 'Recruit relevant users, test important workflows and support the actions that help people get value from your product.', for: 'Product, growth, customer experience and user research teams.', link: 'Explore Product & Platform Adoption', href: '/solution-product-adoption' },
-      { goal: 'Research', topic: 'AI or research', name: 'AI & research', desc: 'Recruit people for language research, data contribution and defined research tasks. Discuss evaluation recruitment through a scoped pilot.', for: 'AI, research, data and product teams.', link: 'Explore AI & Research', href: '/solution-ai-research' },
+      { goal: 'Research', topic: 'AI data & research', name: 'AI data & research', desc: 'Recruit people for language research, data contribution and defined research tasks. Discuss evaluation recruitment through a scoped pilot.', for: 'AI, research, data and product teams.', link: 'Explore AI Data & Research', href: '/solution-ai-research' },
       { goal: 'Hire', topic: 'Workforce needs', name: 'Talent & workforce', desc: 'Connect skills to work through specialised hiring, talent pipelines, capability programmes and implementation projects.', for: 'Talent, engineering, workforce and implementation teams.', link: 'Explore Workforce Activation', href: '/solution-workforce-activation' },
       { goal: 'Grow', topic: 'Ecosystem growth', name: 'Ecosystem growth', desc: 'Keep people involved through community programming, champions, practical challenges and continuing opportunities.', for: 'Community, partnerships, ecosystem and growth teams.', link: 'Explore Customer & Ecosystem Growth', href: '/solution-ecosystem-growth' }
     ];

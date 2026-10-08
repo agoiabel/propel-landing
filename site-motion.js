@@ -8,6 +8,8 @@
     '.zoom img{transition:transform 1.4s ' + E + '}.zoom:hover img{transform:scale(1.035)}' +
     ':is(a,button)>span[aria-hidden]+span[aria-hidden]+span>span{transition:transform 400ms ' + E + '!important}' +
     ':is(a,button):hover>span[aria-hidden]+span[aria-hidden]+span>span{transform:translateY(-50%)!important}' +
+    'button{transition:background-color .3s ease,box-shadow .3s ease,color .3s ease,border-color .3s ease,transform .3s '+E+'}button:active{transform:scale(.97)}' +
+    'details{interpolate-size:allow-keywords}details::details-content{height:0;overflow:clip;opacity:0;transition:height .4s '+E+',opacity .3s ease,content-visibility .4s allow-discrete}details[open]::details-content{height:auto;opacity:1}details>summary{transition:color .25s ease}details>summary>span[aria-hidden]{display:inline-block;transition:transform .35s '+E+'}details[open]>summary>span[aria-hidden]{transform:rotate(45deg)}details{transition:background-color .3s ease}' +
     '.cq{container-type:inline-size}' +
     '.steps4{grid-template-columns:repeat(2,minmax(0,1fr))!important}' +
     '@container (min-width:760px){.steps4{grid-template-columns:repeat(4,minmax(0,1fr))!important}}' +

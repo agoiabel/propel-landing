@@ -1,9 +1,9 @@
 export const STORY_FILTERS = [
   { key: 'all', label: 'All stories' },
   { key: 'learning', label: 'Learning' },
-  { key: 'developer', label: 'Developer ecosystems' },
+  { key: 'developer', label: 'Developer activation & adoption' },
   { key: 'product', label: 'Product & research' },
-  { key: 'ai', label: 'AI & data' },
+  { key: 'ai', label: 'AI data & research' },
   { key: 'workforce', label: 'Workforce' }
 ];
 
@@ -37,10 +37,10 @@ export const STORIES = [
     related: [{ id: 'google-ai-opportunity-fund', name: 'Google.org AI Opportunity Fund' }]
   },
   {
-    id: 'hedera', name: 'Hedera', cats: ['developer'], catLabel: 'Developer ecosystems',
+    id: 'hedera', name: 'Hedera', cats: ['developer'], catLabel: 'Developer activation & adoption',
     summary: 'Community distribution, supported learning and hackathon participation across 20+ cities.',
     stats: ['45,000+ participants', '1,400+ project submissions'], link: 'Read the story', thumb: 'board', thumbLabel: 'Onboard · Build · Submit',
-    title: 'Developer programmes with Hedera | Propel', eyebrow: 'Developer Ecosystems', h1: 'Developer programmes with Hedera',
+    title: 'Developer programmes with Hedera | Propel', eyebrow: 'Developer activation & adoption', h1: 'Developer programmes with Hedera',
     intro: 'The Hedera Africa Hackathon brought developer education and practical building into one programme. Propel supported community distribution, participant onboarding, learning and continued engagement across African markets.',
     factsTitle: 'Reported programme results',
     bars: { caption: 'People counts across programme activities.', items: [
@@ -62,7 +62,7 @@ export const STORIES = [
     ],
     quoteTitle: 'Partner feedback',
     quote: { text: '“What stood out in this collaboration was Propel’s ability to convert awareness into real builder participation.”', by: 'Eya, DAR Blockchain' },
-    cta: { h: 'Start a conversation', p: "Bring us the build objective and the audience. We'll help shape the programme around them.", label: 'Plan a developer activation', topic: 'Developer programme' },
+    cta: { h: 'Start a conversation', p: "Tell us what you want developers to build, and who should be building it.", label: 'Plan a developer activation', topic: 'Developer activation & adoption' },
     related: [{ id: 'squadco', name: 'SquadCo fintech hackathon' }]
   },
   {
@@ -83,14 +83,14 @@ export const STORIES = [
       { h: 'The brief', ps: ['The programme targeted people facing barriers to employment and digital opportunity, including recent immigrants and refugees, unemployed and underemployed adults, and people seeking new career options.', 'The delivery needed to connect those audiences to practical AI learning and provide support as they worked through it.'] },
       { h: 'How Propel delivered', ps: ['Community recruitment brought eligible participants into the programme. Learners were organised into cohorts to support consistent progress and peer participation.', 'Google AI Essentials provided the course content. Live, facilitator-led workshops added support around the learning and its practical application.'] }
     ],
-    cta: { h: 'Start a conversation', p: "We'll work through the audience, recruitment and support needed to deliver it.", label: 'Scope a learning programme', topic: 'Learning or certification' },
+    cta: { h: 'Start a conversation', p: "Tell us who should take part and what they should be able to do afterwards.", label: 'Scope a learning programme', topic: 'Learning or certification' },
     related: [{ id: 'mastercard-foundation', name: 'Mastercard Foundation' }]
   },
   {
-    id: 'orange-wolof', name: 'Orange', cats: ['ai'], catLabel: 'AI & data',
+    id: 'orange-wolof', name: 'Orange', cats: ['ai'], catLabel: 'AI data & research',
     summary: 'Finding a rare three-language population and turning its work into multilingual NLP data.',
     stats: ['1,800+ qualified participants', '200K+ annotated records'], link: 'Read the story', thumb: 'language', thumbLabel: 'Wolof · French · English',
-    title: 'Wolof language research | Propel', eyebrow: 'AI & Research', h1: 'Multilingual NLP data in a hard-to-source language',
+    title: 'Wolof language research | Propel', eyebrow: 'AI data & research', h1: 'Multilingual NLP data in a hard-to-source language',
     intro: 'Orange Silicon Valley needed multilingual NLP data across Wolof, French and English, and every contributor had to be proficient in all three. Propel found the people, ran the workflows and fed the results into the NLP and model layer.',
     factsTitle: 'Results',
     tiles: [{ v: '1,800+', l: 'qualified multilingual participants' }, { v: '200K+', l: 'annotated language records' }, { v: '90th', l: 'percentile model accuracy, as measured on the client’s evaluation' }, { v: '730+', l: 'hours of manual effort saved' }],
@@ -106,14 +106,14 @@ export const STORIES = [
       { h: 'How Propel delivered', ps: ['Propel mobilised relevant communities to find people with the three-language profile, then qualified them against the requirement. Multilingual transcription, translation, contextualisation, annotation and labelling ran as structured workflows, with a data-science layer on top that fed the NLP and model layer.'] },
       { h: 'The results', ps: ['The engagement identified 1,800+ qualified multilingual participants and turned their work into 200K+ annotated language records. Model accuracy reached the 90th percentile on the client’s evaluation, and the structured workflows saved 730+ hours of manual effort over four months.'] }
     ],
-    cta: { h: 'Start a conversation', p: 'Tell us the languages, the skills and the output you need. We will scope the population and the workflow.', label: 'Scope a research brief', topic: 'AI or research' },
+    cta: { h: 'Start a conversation', p: 'Tell us the languages, the skills and the output you need. We will scope the population and the workflow.', label: 'Scope a research brief', topic: 'AI data & research' },
     related: [{ id: 'on-demand-delivery-platform', name: 'US on-demand delivery platform' }, { id: 'defined-ai', name: 'Defined.ai' }]
   },
   {
-    id: 'defined-ai', name: 'Defined.ai', cats: ['ai'], catLabel: 'AI & data',
+    id: 'defined-ai', name: 'Defined.ai', cats: ['ai'], catLabel: 'AI data & research',
     summary: 'Community-sourced data contribution across emerging markets.',
     stats: ['100,000+ data sets delivered'], link: 'Read the story', thumb: 'brief', thumbLabel: 'Contributor brief',
-    title: 'Data contribution for AI | Propel', eyebrow: 'AI & Data', h1: 'Data contribution for AI',
+    title: 'Data contribution for AI | Propel', eyebrow: 'AI data & research', h1: 'Data contribution for AI',
     intro: 'Defined.ai needed diverse data for AI model training across markets that were difficult to reach through conventional sourcing. Propel activated its ecosystem to support the work.',
     factsTitle: 'Result',
     tiles: [{ v: '100,000+', l: 'data sets delivered across emerging markets' }],
@@ -127,14 +127,14 @@ export const STORIES = [
       { h: 'The brief', ps: ['The project needed data contribution at scale, with access to people who understood the relevant market context.'] },
       { h: "Propel's role", ps: ['Propel used its community network to organise contribution from relevant professionals across emerging markets. The engagement delivered more than 100,000 data sets for Defined.ai.'] }
     ],
-    cta: { h: 'Discuss your research', p: "We'll discuss participant requirements, the task and the output your team needs.", label: 'Scope a research brief', topic: 'AI or research' },
+    cta: { h: 'Discuss your research', p: "We'll discuss participant requirements, the task and the output your team needs.", label: 'Scope a research brief', topic: 'AI data & research' },
     related: [{ id: 'orange-wolof', name: 'Orange' }, { id: 'on-demand-delivery-platform', name: 'US on-demand delivery platform' }]
   },
   {
-    id: 'on-demand-delivery-platform', art: 'defined-ai', name: 'US on-demand delivery platform', cats: ['ai'], catLabel: 'AI & data',
+    id: 'on-demand-delivery-platform', art: 'defined-ai', name: 'US on-demand delivery platform', cats: ['ai'], catLabel: 'AI data & research',
     summary: 'A specialist cohort in five languages, delivering production-grade audio data in 10 days.',
     stats: ['200 audio hours', '93% acceptance', '10-day delivery'], link: 'Read the story', thumb: 'timeline', thumbLabel: 'Five languages · 10 days',
-    title: 'Production-grade audio data in 10 days | Propel', eyebrow: 'AI & Data', h1: 'Production-grade audio data in 10 days',
+    title: 'Production-grade audio data in 10 days | Propel', eyebrow: 'AI data & research', h1: 'Production-grade audio data in 10 days',
     intro: 'A leading US on-demand delivery platform needed audio data from live customer and courier interactions, across five languages, on a tight timeline. Propel assembled and managed a specialist cohort with the client’s quality requirements built into the workflow.',
     factsTitle: 'Results',
     tiles: [{ v: '100+', l: 'person specialist cohort' }, { v: '5', l: 'languages' }, { v: '200', l: 'audio hours delivered' }, { v: '93%', l: 'audio acceptance rate' }],
@@ -150,7 +150,7 @@ export const STORIES = [
       { h: 'How Propel delivered', ps: ['Propel rapidly assembled and managed qualified speakers and linguistic transcribers, and embedded the client’s quality requirements into the production workflow rather than checking at the end.'] },
       { h: 'The results', ps: ['A cohort of more than 100 specialists delivered 200 audio hours at a 93% acceptance rate within 10 days.'] }
     ],
-    cta: { h: 'Start a conversation', p: 'Tell us the languages, the volume and the deadline.', label: 'Scope a research brief', topic: 'AI or research' },
+    cta: { h: 'Start a conversation', p: 'Tell us the languages, the volume and the deadline.', label: 'Scope a research brief', topic: 'AI data & research' },
     related: [{ id: 'orange-wolof', name: 'Orange' }, { id: 'defined-ai', name: 'Defined.ai' }]
   },
   {
@@ -193,7 +193,7 @@ export const STORIES = [
       { h: 'The results', ps: ['The programme generated more than 500 insights with 92% tester engagement. Fertitude implemented 17 UX improvements covering areas such as navigation, accessibility and feature clarity.', 'Fertitude also reported a 40% increase in adoption after launch, following the testing cycle and product changes.'] }
     ],
     quoteTitle: 'Client feedback',
-    quote: { text: '“Propel’s ability to rapidly recruit and manage high-quality testers saved us weeks of development time and gave us the confidence to launch.”', by: 'Dr. Kieva Chris-Amusan, CEO & Co-founder, Fertitude' },
+    quote: { text: '“Propel’s ability to rapidly recruit and manage high-quality testers saved us weeks of development time and gave us the confidence to launch.”', by: 'CEO & Co-founder, Fertitude' },
     cta: { h: 'Start a conversation', p: 'Tell us the feature, the users and the questions you need answered.', label: 'Discuss a product programme', topic: 'Product testing or adoption' },
     related: [{ id: 'big-cabal-media', name: 'Big Cabal Media' }]
   },
@@ -219,7 +219,7 @@ export const STORIES = [
     ],
     quoteTitle: 'Client feedback',
     quote: { text: '“We received high-quality insights in a short time. Propel helped us get to market very quickly by giving us access to the right users and actionable feedback.”', by: 'Olanrewaju Odunowo, Head of TechCabal Insights, Big Cabal Media' },
-    cta: { h: 'Plan your product programme', p: "We'll help recruit the right participants and organise the feedback around your decisions.", label: 'Discuss a product programme', topic: 'Product testing or adoption' },
+    cta: { h: 'Plan your product programme', p: "Tell us the product and the questions you need users to answer.", label: 'Discuss a product programme', topic: 'Product testing or adoption' },
     related: [{ id: 'fertitude', name: 'Fertitude' }]
   },
   {
@@ -243,15 +243,15 @@ export const STORIES = [
       { h: 'The results', ps: ['Five professionals joined through two hiring cycles. The average time from role kickoff to offer acceptance was 14 days.'] }
     ],
     quoteTitle: 'Client feedback',
-    quote: { text: '“They handled the entire screening process, made onboarding effortless, and were consistently quick and clear in their communication.”', by: 'Gabriel Makinde, CEO, Coreloops' },
+    quote: { text: '“They handled the entire screening process, made onboarding effortless, and were consistently quick and clear in their communication.”', by: 'CEO, Coreloops' },
     cta: { h: 'Start a conversation', p: 'Tell us the role, the requirements and the timing.', label: 'Discuss workforce needs', topic: 'Workforce needs' },
     related: [{ id: 'unique-ai', name: 'Unique AI' }]
   },
   {
-    id: 'squadco', name: 'SquadCo', cats: ['developer'], catLabel: 'Developer ecosystems',
+    id: 'squadco', name: 'SquadCo', cats: ['developer'], catLabel: 'Developer activation & adoption',
     summary: 'Targeted recruitment for a fintech hackathon.',
     stats: ['300+ participants', 'Application goal exceeded by 40%'], link: 'Read the story', thumb: 'timeline', thumbLabel: 'Six-week recruitment',
-    title: 'A fintech developer challenge | Propel', eyebrow: 'Developer Ecosystems', h1: 'A fintech developer challenge',
+    title: 'A fintech developer challenge | Propel', eyebrow: 'Developer activation & adoption', h1: 'A fintech developer challenge',
     intro: 'SquadCo needed a qualified participant pool for its fintech hackathon within a six-week recruitment window. Propel activated relevant technical communities to bring developers, designers and innovators into the programme.',
     factsTitle: 'Results',
     pct: [{ label: 'Participants with relevant fintech or coding experience', p: 70 }, { label: 'Active participation during the hackathon', p: 80 }],
@@ -267,11 +267,11 @@ export const STORIES = [
       { h: 'How Propel delivered', ps: ['Propel distributed the opportunity through technical communities, organised sign-up and programme communications, and supported engagement before the event. Recruitment considered skills, interests and representation alongside the participant goal.'] },
       { h: 'The results', ps: ['The programme attracted more than 300 participants and exceeded its application goal by 40%. The case record reports 80% active participation during the hackathon and more than ten standout solutions, with several concepts progressing within SquadCo.'] }
     ],
-    cta: { h: 'Plan your developer programme', p: "Let's shape the audience and programme around your challenge.", label: 'Plan a developer activation', topic: 'Developer programme' },
+    cta: { h: 'Plan your developer programme', p: "Let's shape the audience and programme around your challenge.", label: 'Plan a developer activation', topic: 'Developer activation & adoption' },
     related: [{ id: 'hedera', name: 'Hedera' }]
   },
   {
-    id: 'quidax-moonshot', name: 'Quidax × Moonshot', cats: ['developer'], catLabel: 'Developer ecosystems',
+    id: 'quidax-moonshot', name: 'Quidax × Moonshot', cats: ['developer'], catLabel: 'Developer activation & adoption',
     summary: 'A targeted campaign connecting a pitch competition to relevant Web3 founders and builders.',
     stats: ['Qualified responses within the first week'], link: 'Read the story', thumb: 'timeline', thumbLabel: 'Two-week campaign',
     title: 'Reaching a specialised audience | Propel', eyebrow: 'Community & Developer Activation', h1: 'Reaching a specialised audience',
@@ -312,7 +312,7 @@ export const STORIES = [
     ],
     quoteTitle: 'Client feedback',
     quote: { text: '“Propel accomplished what we thought was impossible. They didn’t just understand our technical requirements – they understood the problem we were trying to solve as a business.”', by: 'Unique AI' },
-    cta: { h: 'Start a conversation', p: "We'll work through the roles, assessment and candidate information your team needs.", label: 'Discuss workforce needs', topic: 'Workforce needs' },
+    cta: { h: 'Start a conversation', p: "Tell us the roles and the skills that matter most.", label: 'Discuss workforce needs', topic: 'Workforce needs' },
     related: [{ id: 'coreloops', name: 'Coreloops' }]
   },
   {
@@ -349,7 +349,7 @@ export const ARTICLES = [
     sections: [
       { h: 'Supporting adoption', ps: ['Good content and a useful product matter. So do the arrangements around them: who is invited, why the task matters, what is expected and where participants can get help.', 'A learning programme might need facilitator-led cohorts and progress check-ins. A hackathon needs developer onboarding, technical resources, team formation and submission support. A research assignment needs relevant participants, clear instructions and a way to assess their contribution.', 'Those are different programmes. They share a need for coordinated human participation.'] },
       { h: 'Community contributions', ps: ['Community leaders have relationships that an enterprise cannot create with a campaign alone. They understand how their members communicate, what interests them and which opportunities are likely to fit.', 'That knowledge helps with distribution and recruitment. It still needs to be connected to an organised programme.', 'At Propel, those components form the operating capability we call the Human Distribution Layer: communities and leaders, learning partners, local operators, infrastructure and the platform that helps coordinate the work.'] },
-      { h: 'Coordinating delivery', ps: ["For Google.org's AI Opportunity Fund in Portugal, the work brought together community recruitment, supported cohorts, Google AI Essentials and live workshops.", "Orange's Wolof-language NLP work needed a different audience. Propel's role was to mobilise contributors with the language and local context the brief required.", 'The two engagements did not use an identical participant network. They show how audience access and delivery can be configured around very different enterprise goals.'] },
+      { h: 'Coordinating delivery', ps: ["For Google.org's AI Opportunity Fund, the work brought together community recruitment, supported cohorts, Google AI Essentials and live workshops.", "Orange's Wolof-language NLP work needed a different audience. Propel's role was to mobilise contributors with the language and local context the brief required.", 'The two engagements did not use an identical participant network. They show how audience access and delivery can be configured around very different enterprise goals.'] },
       { h: 'What to measure', ps: ['A programme should report the stages that matter to its purpose. Reach tells you about exposure. Registration tells you who expressed interest. Participation, completed work and continued use tell you something else.', 'Mixing those measures makes it harder to understand what happened. Decide what counts before the programme begins, then report each stage clearly.'] },
       { h: 'What can be reused', ps: ['Community relationships, partner arrangements and programme workflows can provide a starting point for the next brief. So can participant records, where there is a relevant and appropriate basis to use them.', 'That is the enterprise value of an operating layer: access to a capability that would otherwise have to be assembled for each initiative. It still has to be adapted to the audience and assessed on the work delivered.'] },
       { h: 'The next action', ps: ['For your next launch or programme, define what a person needs to do after they see the invitation. Then ask what will help them do it.', 'That answer belongs in the delivery plan from the beginning.'] }
@@ -365,7 +365,7 @@ export const ARTICLES = [
     diagram: { title: 'Learning-to-application pathway', steps: ['Learn the tool', 'Try a relevant task', 'Review the work', 'Apply it again'], loop: true },
     sections: [
       { h: 'Start with an application', ps: ['Pick a task the learner actually needs to do. It might be preparing a research summary, exploring a dataset, drafting a customer response or building a small application.', 'The task gives the learning a destination. It also helps the programme team decide which skills and support the participant needs.', 'There should still be clear standards. Learners need to assess outputs, understand the limits of the tool and recognise when human review is required. Application is more useful when people can explain their judgement alongside the result.'] },
-      { h: 'Practical application', ps: ['Supported cohorts create space for questions and peer exchange. Facilitators can help participants work through problems, while practical activities give them a reason to apply what they learned.', "Propel's Portugal delivery for Google.org's AI Opportunity Fund combined Google AI Essentials with cohorts and live workshops. The programme connected a global course to local recruitment and participant support.", 'The design lesson is practical: the course provides the content, while the programme gives learners a supported way to work with it.'] },
+      { h: 'Practical application', ps: ['Supported cohorts create space for questions and peer exchange. Facilitators can help participants work through problems, while practical activities give them a reason to apply what they learned.', "Propel's delivery for Google.org's AI Opportunity Fund combined Google AI Essentials with cohorts and live workshops. The programme connected a global course to local recruitment and participant support.", 'The design lesson is practical: the course provides the content, while the programme gives learners a supported way to work with it.'] },
       { h: 'After the lesson', ps: ['An applied challenge can create a bridge into a project. A project can give someone material to discuss with a mentor, employer or implementation partner. A showcase can help other participants discover useful applications.', 'These next steps need owners, instructions and timing. They cannot be left as a hopeful sentence at the end of the course.'] },
       { h: 'Measure the goal you set', ps: ['For a learning brief, course completion and assessment may be the right measures. For a developer programme, the useful outcome might be a reviewed project or integration. For workplace adoption, it may be continued use in an agreed workflow.', 'Define the measure and the observation period in advance. Keep participation, skill assessment and product use separate so the results remain understandable.'] },
       { h: 'Planning the programme', ps: ['Recruit participants who fit the intended use. Support their learning. Give them practical work. Review the output. Agree a next step that gives them a reason to return.', 'The purpose of each step should be clear to the people taking part, not just to the organisation funding it.', 'Before your next cohort starts, finish this sentence: “After the course, participants will be able to…” Then design the programme around what follows.'] }
